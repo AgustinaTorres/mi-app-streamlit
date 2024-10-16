@@ -1,7 +1,7 @@
 import streamlit as st
 from pipelines import pdf_pipeline, video_pipeline, scrapping_pipeline
 from functions import get_user_web_selection, scrape_web_header, scrape_news, news_sites
-from SELENIUM.draft_files.scrapping_transcription_functions import get_user_web_selection, scrape_web_header, scrape_news, save_scrapping_transcription, news_sites
+from scrapping_transcription_functions import get_user_web_selection, scrape_web_header, scrape_news, save_scrapping_transcription, news_sites
 from summary_functions import MultilingualSummarizer, summarize_text, split_text 
 import re
 import os
