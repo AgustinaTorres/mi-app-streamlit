@@ -1,11 +1,12 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 from pipelines import pdf_pipeline, video_pipeline, scrapping_pipeline
 from functions import get_user_web_selection, scrape_web_header, scrape_news, news_sites
 from scrapping_transcription_functions import get_user_web_selection, scrape_web_header, scrape_news, save_scrapping_transcription, news_sites
-from summary_functions import MultilingualSummarizer, summarize_text, split_text 
+from summary_transformers import MultilingualSummarizer, summarize_text, split_text 
 import re
 import os
-from streamlit_option_menu import option_menu
+
 
 # Configurar el título principal y la disposición de la página
 st.set_page_config(page_title="TRABAJO FINAL DE MASTER - Torres Moray, Agustina", layout="wide")
@@ -16,10 +17,8 @@ def show_loading_message():
 
 
 # --------------------------------------------- HEADER ---------------------------------------------------------------------
-##background-image: url("https://img.freepik.com/vector-gratis/fondo-tecnologia-global-espacio-texto_1017-19388.jpg");
 
-#https://img.freepik.com/vector-gratis/fondo-tecnologia-global-espacio-texto_1017-19388.jpg
-# CSS app style
+# Estilo de fondo
 page_bg_img = '''
 <style>
 .stApp {
@@ -41,36 +40,83 @@ body::before {
     z-index: -1; /* Asegúrate de que esté detrás del contenido */
 }
 
-
+/* CSS para las iniciales en la esquina superior derecha */
+.initials {
+    position: absolute;
+    top: 20px; /* Ajusta este valor para cambiar la distancia desde la parte superior */
+    right: 20px; /* Ajusta este valor para cambiar la distancia desde la derecha */
+    color: white; /* Color del texto */
+    font-size: 20px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    z-index: 999; /* Asegúrate de que el texto esté en la parte superior */
+}
 </style>
 '''
 
+# Aplicar el estilo de fondo
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
+# Mostrar iniciales en la esquina superior derecha
+st.markdown('<div class="initials">By GUCHI</div>', unsafe_allow_html=True)  # Cambia "AT" por tus iniciales
+
+
+# Cargar la imagen del logo desde la carpeta local
+#logo_path = "assets/logo.jpg"  # Cambia la ruta según sea necesario
+#st.markdown(f'<img src="{logo_path}" class="logo" style="width:100px;">', unsafe_allow_html=True)  # Ajusta el tamaño según necesites
 
 
 # Crear un navbar en la parte superior de la página
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# Define estilos comunes
+menu_styles = {
+    "container": {"padding": "10!important", "background-color": "#63a7cf"},
+    "icon": {"color": "white", "font-size": "15px"},  # Estilo de los íconos
+    "nav-link": {
+        "font-size": "16px",
+        "text-align": "left",
+        "margin": "0px",
+        "color": "white",
+        "padding": "10px",
+    },
+    "nav-link-selected": {"background-color": "gray"},  # Color cuando está seleccionado
+}
+
+# Menú principal
 with st.sidebar:
     selected = option_menu(
-        menu_title="MENU",  # Título del menú
-        options=["Introducción", "Desarrollo", "Conclusiones", "Contactanos"],  # Opciones del menú
+        menu_title="",  # Título del menú
+        options=["Introducción", "Desarrollo", "Conclusiones"],  # Opciones del menú
         icons=["house", "file-earmark-text", "book"],  # Íconos correspondientes a las opciones
         menu_icon="cast",  # Ícono del menú
         default_index=0,  # Opción seleccionada por defecto
         orientation="vertical",
-        styles={
-        "container": {"padding": "10!important", "background-color": "#63a7cf"},
-        "icon": {"color": "white", "font-size": "15px"},  # Estilo de los íconos
-        "nav-link": {
-            "font-size": "16px",
-            "text-align": "left",
-            "margin": "0px",
-            "color": "white",
-            "padding": "10px",
-        },
-        "nav-link-selected": {"background-color": "gray"},  # Color cuando está seleccionado
-    } # Cambiar esto a "horizontal" para barra en la parte superior
+        styles=menu_styles
     )
+    
+    # Agregar un separador o un título adicional
+    st.markdown("---")  # Separador horizontal
+    st.markdown("### Memoria del TFM")  # Título adicional
+
+    # Botón de descarga para el PDF
+    pdf_file_path = "raw_data/uploaded_pdf.pdf"  # Ruta al archivo PDF
+
+    # Usar el botón de descarga
+    with open(pdf_file_path, "rb") as pdf_file:
+        st.download_button(
+            label="Descarga pinchando",  # Texto del botón
+            data=pdf_file,               # El contenido del archivo
+            file_name="memoria_TFM.pdf", # Nombre del archivo que se descargará
+            mime="application/pdf"        # Tipo MIME para PDF
+        )
+    
+    # Agregar otro separador
+    st.markdown("---")  # Separador horizontal
+    st.markdown("### Soporte")
+    st.write("Para preguntas, contacta a atmoray@gmail.com")
+
+
 
 # Primera página: Introducción
 if selected == "Introducción":
@@ -108,10 +154,14 @@ elif selected == "Desarrollo":
                 try:
                     with st.spinner("Cargando, por favor espera..."):
                         summarized_text = pdf_pipeline(pdf_file, summary_length)
-
-                    # Print the summary
-                    st.write("Resumen del PDF:")
-                    st.write(summarized_text)
+                        st.markdown(
+                                        """
+                                        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                                            <h3>Resumen de la Noticia:</h3>
+                                            <p>{}</p>
+                                        </div>
+                                        """.format(summarized_text), unsafe_allow_html=True
+                                    )
 
                 except Exception as e:
                     st.error(f"Error al resumir el pdf: {str(e)}")
@@ -129,11 +179,16 @@ elif selected == "Desarrollo":
                 try:
                     with st.spinner("Cargando, por favor espera..."):
                         summarized_text = video_pipeline(video_url, summary_length)
-                        
-                    # Show the text
-                    st.write("Resumen del video:")
-                    st.write(summarized_text)
-                    
+                         # Estilo para el fondo blanco
+                        st.markdown(
+                            """
+                            <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                                <h3>Resumen de la Noticia:</h3>
+                                <p>{}</p>
+                            </div>
+                            """.format(summarized_text), unsafe_allow_html=True
+                        )
+                                       
                 except Exception as e:
                     st.error(f"Error al resumir el video: {str(e)}")
             else:
@@ -200,8 +255,16 @@ elif selected == "Desarrollo":
                                 with st.spinner("Resumiendo la noticia..."):
                                     # summarizer = MultilingualSummarizer()
                                     summarized_text = scrapping_pipeline(selected_news['content'], summary_length)
-                                    st.markdown(f"### Resumen de la Noticia:")
-                                    st.write(summarized_text)
+                                     # Estilo para el fondo blanco
+                                    st.markdown(
+                                        """
+                                        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                                            <h3>Resumen de la Noticia:</h3>
+                                            <p>{}</p>
+                                        </div>
+                                        """.format(summarized_text), unsafe_allow_html=True
+                                    )
+                                    
 
 elif selected == "Conclusiones":
     st.title("Conclusiones")
