@@ -13,14 +13,13 @@ from bs4 import BeautifulSoup
 import html
 import html5lib
 
-#------------------------------------------------- PDF FUNCTIONS------------------------------------------
-#Save pdf file
+#-------------------------------------- FUNCIONES PDF ------------------------------------------
+
 def save_pdf_file(pdf_file, input_path):
     with open(input_path, "wb") as f:
         f.write(pdf_file.getbuffer())
    
 
-#Function to read pdf
 def extract_text_from_pdf(pdf_path):
 
     # Open the PDF file
@@ -49,7 +48,6 @@ def extract_text_from_pdf(pdf_path):
     return raw_text
 
 
-# Read pdf with PDFPlumber
 def extract_text_from_pdf_plumber(pdf_path):
     raw_text = ""
     with pdfplumber.open(pdf_path) as pdf:
@@ -69,12 +67,12 @@ def extract_text_from_pdf_plumber(pdf_path):
             #raw_text += page.extract_text()
     return raw_text
 
-#-------------------------------------- VIDEO FUNCTIONS ------------------------------------------
-# Extract the video code from the URL
+#-------------------------------------- FUNCIONES VIDEO ------------------------------------------
+
 def get_video_code(url):
     return url.split("?v=")[-1]
 
-# Fetch the transcript from YouTube
+
 def fetch_transcript(video_code, languages=['es', 'en']):
     try:
         # Attempt to retrieve manually created transcript
@@ -90,7 +88,6 @@ def fetch_transcript(video_code, languages=['es', 'en']):
     return transcript
 
 
-# Transcribe the video by fetching the text from the transcript
 def transcribe_youtube(transcript):
     try:
         transcript_data = transcript.fetch()
@@ -100,7 +97,6 @@ def transcribe_youtube(transcript):
         raise Exception(f"Error fetching transcript: {str(e)}")
     
 
-# Detect the language of the given text
 def detect_language(text):
     """
     Detects the language of the provided text.
@@ -113,9 +109,9 @@ def detect_language(text):
     except:
         return "Language detection failed"
 
-#-------------------------------------- SCRAPPING FUNCTIONS----------------------------------------
+#-------------------------------------- FUNCIONES WEB SCRAPPING ----------------------------------------
 
-# Define a dictionary with all the news options
+
 news_sites = [
     {
         "name": "El pais",
@@ -221,9 +217,7 @@ def scrape_news(user_section_selection, user_web_selection):
         return []
 
 
-
-
-#-------------------------------------CLEANING TEXT ------------------------------------------------------------
+#------------------------------------- FUNCIONES DE LIMPIEZA DE TEXTO ------------------------------------------------------------
 
 def remove_line_breaks(text):
     # Remover saltos de línea excesivos
@@ -236,23 +230,19 @@ def remove_non_alphanumeric(text):
     text = re.sub(r'[^A-Za-z0-9áéíóúñüÁÉÍÓÚÑÜ.,;:\s]', '', text)
     return text
 
-
 def preprocess_text(text):
     text = re.sub(r'\s+', ' ', text)  # Elimina espacios extra
     text = text.strip()  # Elimina espacios en los extremos
     return text
 
+#------------------------------------- FUNCIONES DE GUARDADO (FICHEROS Y TEXTOS) ------------------------------------------------------------
 
-#---------------------------SAVING TEXT (TRANSCRIPTIONS ANS SUMMARIES)------------------------------------------------------------
-
-#Save the transcription
 def save_text(text,path):
     with open(path, 'w', encoding='utf-8') as file:
         file.write(text)
 
+# ----------------------------- FUNCION DE IMPRESION DE TEXTO --------------------------------------------
 
-# ----------------------------- PRINTING RESULT --------------------------------------------
-# Show the transcribed text
 def show_full_text(text):
     display(Markdown(text))
 

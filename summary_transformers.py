@@ -75,7 +75,6 @@ def split_text_tokenizer(text, tokenizer, chunk_size):
 
 def summarize_text(text, summarizer, max_length, chunk_size):
     chunks = split_text(text, chunk_size)
-    #chunks = split_text_tokenizer(text,summarizer.tokenizer, chunk_size)
     summaries = []
     for chunk in chunks:
         summary = summarizer.summarize(chunk, max_length=max_length)

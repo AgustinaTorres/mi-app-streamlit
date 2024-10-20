@@ -40,6 +40,7 @@ def summarize_with_gptneo(text):
     # Decodificar y mostrar el resultado
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
+    # Limpiar el texto obtenido de manera que finalice en un punto.
     last_period_index = generated_text.rfind('.')
     if last_period_index != -1:
         generated_text = generated_text[:last_period_index + 1]  # Incluir el punto
@@ -81,6 +82,7 @@ def summarize_with_distilgpt2(text):
     
     summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+    # Limpiar el texto obtenido de manera que finalice en un punto.
     last_period_index = summary.rfind('.')
     if last_period_index != -1:
         summary = summary[:last_period_index + 1]  # Incluir el punto
