@@ -1,9 +1,9 @@
 # Importar librerias
-from functions import get_video_code, fetch_transcript, transcribe_youtube, detect_language, show_full_text, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter
+from functions import get_video_code, fetch_transcript, transcribe_youtube, detect_language, show_full_text, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter, translate_to_spanish
 from summary_transformers import MultilingualSummarizer,T5Summarizer, summarize_text, split_text, summarize_text_tokenizer, split_text_tokenizer
 from summary_llms import summarize_with_gptneo, summarize_with_distilgpt2
 import os
-
+import streamlit as st
 
 # Carpetas donde se guardan los inputs y outputs.
 input_folder = "raw_data"
@@ -27,12 +27,7 @@ summary_path_pdf = os.path.join(summary_folder, pdf_file_name)
 summary_path_video =  os.path.join(summary_folder, video_transcription_name)
 summary_path_scrapping =  os.path.join(summary_folder, scrapping_transcription_name)
 
-# Variables parametrizables en modelos de resumen de transformer implementados durante etapas de prueba.
-#CHUNK_SIZE = 950
-#MODEL = MultilingualSummarizer()
-
-
-def pdf_pipeline(pdf_file):
+def pdf_pipeline(pdf_file, model_name):
     """
     Procesa un ficher pdf, obtiene la transcripción y genera un resumen.
 
@@ -46,6 +41,7 @@ def pdf_pipeline(pdf_file):
     os.makedirs(input_folder, exist_ok=True)
     save_pdf_file(pdf_file, input_path)
 
+
     raw_text = extract_text_from_pdf_with_columns_and_footer_filter(input_path)
 
     #Funciones de limpieza, no requeridas finalmente.
@@ -57,15 +53,18 @@ def pdf_pipeline(pdf_file):
 
     #summarizer = MODEL 
     #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
-    
-    summarized_text = summarize_with_gptneo(raw_text)
+ 
+    if model_name == "EleutherAI/gpt-neo-125M":
+        summarized_text = summarize_with_gptneo(raw_text)
+    else:
+        summarized_text = summarize_with_distilgpt2(raw_text)
 
     os.makedirs(summary_folder, exist_ok=True)
     save_text(summarized_text, summary_path_pdf)
 
     return summarized_text
 
-def video_pipeline(video_url): 
+def video_pipeline(video_url, model_name): 
     """
     Procesa un video de YouTube, obtiene la transcripción y genera un resumen.
 
@@ -90,19 +89,27 @@ def video_pipeline(video_url):
     #summarizer = MODEL  # Carga el modelo de resumen
     #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
 
-    summarized_text = summarize_with_distilgpt2(raw_text)
+
+    if model_name == "EleutherAI/gpt-neo-125M":
+        summarized_text = summarize_with_gptneo(raw_text)
+    else:
+        summarized_text = summarize_with_distilgpt2(raw_text)
 
     os.makedirs(summary_folder, exist_ok=True)
     save_text(summarized_text, summary_path_video)
 
     return summarized_text
 
-def scrapping_pipeline(raw_text):
+def scrapping_pipeline(raw_text, model_name, new_site):
 
+    if new_site == "NBC":
+        translated_text = translate_to_spanish(raw_text)
+    else:
+        translated_text = raw_text
     """
     Procesa una noticia obtenida de periodico en linea, obtiene la transcripción y genera un resumen.
 
-    Args:
+    Args::
         raw_text (str): el texto de la noticia obtenido a traves de web scrapping.
 
     Returns:
@@ -111,8 +118,13 @@ def scrapping_pipeline(raw_text):
 
     #summarizer = MODEL  # Carga el modelo de resumen
     #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
+    st.write("MODELO:",model_name)
+  
     
-    summarized_text = summarize_with_gptneo(raw_text)
+    if model_name == "EleutherAI/gpt-neo-125M":
+        summarized_text = summarize_with_gptneo(translated_text)
+    else:
+        summarized_text = summarize_with_distilgpt2(translated_text)
 
     os.makedirs(summary_folder, exist_ok=True)
     save_text(summarized_text, summary_path_scrapping)

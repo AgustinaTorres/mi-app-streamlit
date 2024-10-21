@@ -72,13 +72,13 @@ menu_styles = {
     "nav-link-selected": {"background-color": "gray"},  # Color cuando está seleccionado
 }
 
-# --------------------------------------------- MENU DESPLEGABLE Y PAGINAS---------------------------------------------------------------------
+# --------------------------------------------- MENU DESPLEGABLE ---------------------------------------------------------------------
 
 # Menú vertical desplegable
 with st.sidebar:
     selected = option_menu(
         menu_title="",  # Título del menú
-        options=["Introducción", "Resume", "Conclusiones"],  # Opciones del menú
+        options=["Introducción", "Resume", "Ajustes"],  # Opciones del menú
         icons=["house", "file-earmark-text", "book"],  # Íconos correspondientes a las opciones
         menu_icon="cast",  # Ícono del menú
         default_index=0,  # Opción seleccionada por defecto
@@ -107,6 +107,18 @@ with st.sidebar:
     st.markdown("### Soporte")
     st.write("Para preguntas, contacta a atmoray@gmail.com")
 
+# --------------------------------------------- ESTADO PARAMETRIZACION MODELOS ---------------------------------------------------------------------
+
+# Inicializar 'ajustes' en session_state si no existe
+if "ajustes" not in st.session_state:
+    st.session_state["ajustes"] = {
+        "summary_length": "50",  # Valor por defecto para la longitud del resumen
+        "model_name": "EleutherAI/gpt-neo-125M",  # Modelo por defecto
+        "temperature": 0.7,  # Temperatura por defecto
+        "mode": "sampling"  # Modo por defecto
+    }
+
+# --------------------------------------------- PAGINAS PRINCIPALES ---------------------------------------------------------------------
 
 # Primera página: Introducción
 if selected == "Introducción":
@@ -170,7 +182,8 @@ elif selected == "Resume":
                 try:
                     with st.spinner("Reumiendo, por favor espere..."):
                         #summarized_text = pdf_pipeline(pdf_file, summary_length)
-                        summarized_text = pdf_pipeline(pdf_file)
+                        model_name = st.session_state["ajustes"]["model_name"]
+                        summarized_text = pdf_pipeline(pdf_file,model_name)
                         # Estilo para el fondo blanco
                         st.markdown(
                                         """
@@ -197,7 +210,8 @@ elif selected == "Resume":
                 try:
                     with st.spinner("Resumiendo, por favor espera..."):
                         #summarized_text = video_pipeline(video_url, summary_length)
-                        summarized_text = video_pipeline(video_url)
+                        model_name = st.session_state["ajustes"]["model_name"]
+                        summarized_text = video_pipeline(video_url, model_name)
                         # Estilo para el fondo blanco
                         st.markdown(
                             """
@@ -272,7 +286,8 @@ elif selected == "Resume":
                             if resumir_noticia and selected_news:
                                 with st.spinner("Resumiendo la noticia, por favor espere..."):
                                     # summarizer = MultilingualSummarizer()
-                                    summarized_text = scrapping_pipeline(selected_news['content'])
+                                    model_name = st.session_state["ajustes"]["model_name"]
+                                    summarized_text = scrapping_pipeline(selected_news['content'], model_name, selected_news_site)
                                      # Estilo para el fondo blanco
                                     st.markdown(
                                         """
@@ -284,6 +299,95 @@ elif selected == "Resume":
                                     )
                                     
 
-elif selected == "Conclusiones":
-    st.title("Conclusiones")
-    st.header("Conclusiones del Proyecto")
+if selected == "Ajustes":
+    css_fondo_ajustes = """
+    <style>
+        /* Fondo claro para los selectboxes, sliders y los inputs en general */
+        .stSlider, .stSelectbox, .stTextInput, .stNumberInput {
+            background-color: rgba(255, 255, 255, 0.8) !important; /* Fondo claro */
+            color: black !important;
+            border-radius: 10px !important;
+            padding: 10px !important;
+            height:100px
+        }
+
+        /* Títulos de los parámetros más grandes */
+        .css-10trblm {  
+            font-size: 20px !important;  
+            font-weight: bold !important;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo de los sliders */
+        .stSlider > div input {
+            background-color: #f0f0f0 !important;  /* Color suave */
+        }
+
+        /* Separación y dimensiones uniformes de los elementos */
+        .stSlider, .stSelectbox, .stTextInput, .stNumberInput {
+            margin-bottom: 15px !important;  /* Espaciado entre elementos */
+            width: 90% !important;  /* Asignar el mismo ancho */
+        }
+
+        /* Ajustar el ancho de cada columna para asegurar alineación */
+        .columna-ajuste {
+            width: 100% !important;
+            max-width: 200px;  /* Controlar el tamaño máximo */
+        }
+    </style>
+    """
+    
+    # Aplicar el CSS
+    st.markdown(css_fondo_ajustes, unsafe_allow_html=True)
+
+    st.title("Ajustes tecnicos")
+    st.markdown("Parametriza tu modelo de resumen. Caso contrario se aplicaran los valores por default.")
+
+
+    # Crear las dos columnas
+    col1, col2 = st.columns(2)
+
+    # Parametrización en la primera columna
+    with col1:
+        # Longitud del resumen
+        summary_length = st.selectbox(
+            "LONGITUD DEL RESUMEN", 
+            ["50", "100", "200"], 
+            index=["50", "100", "200"].index(str(st.session_state["ajustes"]["summary_length"]))  # Obtener el índice del valor actual
+        )
+        summary_length_value = int(summary_length)  # Extraer valor numérico
+
+        # Seleccionar el modelo
+        model_name = st.selectbox(
+            "MODELO DE RESUMEN", 
+            ["EleutherAI/gpt-neo-125M", "distilgpt2"],
+            index=["EleutherAI/gpt-neo-125M", "distilgpt2"].index(st.session_state["ajustes"]["model_name"])  # Obtener el índice del valor actual
+        )
+
+    # Parametrización en la segunda columna
+    with col2:
+        # Parametrizar la temperatura
+        temperature = st.slider(
+            "ALEATOREIDAD DEL TEXTO / CREATIVIDAD", 
+            min_value=0.0, 
+            max_value=1.0, 
+            value=st.session_state["ajustes"]["temperature"]  # Usar el valor guardado
+        )
+
+        # Modo de muestreo
+        mode = st.selectbox(
+            "MODO DE GENERACION", 
+            ["sampling", "beam search"], 
+            index=["sampling", "beam search"].index(st.session_state["ajustes"]["mode"])  # Obtener el índice del valor actual
+        )
+
+    # Guardar los valores en st.session_state
+    st.session_state["ajustes"] = {
+        "summary_length": summary_length_value,
+        "model_name": model_name,
+        "temperature": temperature,
+        "mode": mode
+    }
+
+    # Cerrar la div de la caja de ajustes
+    st.markdown("</div>", unsafe_allow_html=True)

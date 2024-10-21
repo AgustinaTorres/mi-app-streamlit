@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 import html
 import html5lib
-
+from transformers import MarianMTModel, MarianTokenizer
 #-------------------------------------- FUNCIONES PDF ------------------------------------------
 
 def save_pdf_file(pdf_file, input_path):
@@ -290,3 +290,17 @@ def extract_text_from_pdf_with_columns_and_footer_filter(pdf_path):
 
     # Join the list into a single string and return the extracted text
     return ''.join(full_text)
+
+
+
+def translate_to_spanish(text):
+    # Cargar el modelo y tokenizer de traducción
+    model_name = "Helsinki-NLP/opus-mt-en-es"
+    tokenizer = MarianTokenizer.from_pretrained(model_name)
+    model = MarianMTModel.from_pretrained(model_name)
+
+    # Tokenizar el texto de entrada y traducir
+    translated = model.generate(**tokenizer(text, return_tensors="pt", padding=True))
+    translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
+
+    return translated_text
