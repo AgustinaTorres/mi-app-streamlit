@@ -1,5 +1,4 @@
 from transformers import GPTNeoForCausalLM, GPT2Tokenizer, AutoTokenizer, AutoModelForCausalLM
-import torch
 import streamlit as st
 
 def summarize_with_gptneo(text):
