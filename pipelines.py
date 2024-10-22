@@ -1,5 +1,5 @@
 # Importar librerias
-from functions import get_video_code, fetch_transcript, transcribe_youtube, detect_language, show_full_text, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter, translate_to_spanish
+from functions import get_video_code, fetch_transcript, transcribe_youtube, show_full_text, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter, translate_to_spanish
 from summary_transformers import MultilingualSummarizer,T5Summarizer, summarize_text, split_text, summarize_text_tokenizer, split_text_tokenizer
 from summary_llms import summarize_with_gptneo, summarize_with_distilgpt2
 import os

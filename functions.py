@@ -5,7 +5,6 @@ import re
 import pdfplumber
 import streamlit as st
 import requests
-from langdetect import detect
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 from IPython.display import Markdown, display
 import requests
@@ -97,17 +96,6 @@ def transcribe_youtube(transcript):
         raise Exception(f"Error fetching transcript: {str(e)}")
     
 
-def detect_language(text):
-    """
-    Detects the language of the provided text.
-    
-    :param text: Text to analyze
-    :return: Detected language as a string
-    """
-    try:
-        return detect(text)
-    except:
-        return "Language detection failed"
 
 #-------------------------------------- FUNCIONES WEB SCRAPPING ----------------------------------------
 
