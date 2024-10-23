@@ -242,17 +242,25 @@ def preprocess_text(text):
     text = text.strip()  # Elimina espacios en los extremos
     return text
 
-def translate_to_spanish(text):
+def translate_to_spanish(text, max_length=512):
     # Cargar el modelo y tokenizer de traducción
     model_name = "Helsinki-NLP/opus-mt-en-es"
     tokenizer = MarianTokenizer.from_pretrained(model_name)
     model = MarianMTModel.from_pretrained(model_name)
+    
+    # Dividir el texto en fragmentos si es muy largo
+    text_chunks = [text[i:i+max_length] for i in range(0, len(text), max_length)]
+    translated_chunks = []
+    
+    # Traducir cada fragmento por separado
+    for chunk in text_chunks:
+        translated = model.generate(**tokenizer(chunk, return_tensors="pt", padding=True, truncation=True))
+        translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
+        translated_chunks.append(translated_text)
+    
+    # Unir todos los fragmentos traducidos
+    return " ".join(translated_chunks)
 
-    # Tokenizar el texto de entrada y traducir
-    translated = model.generate(**tokenizer(text, return_tensors="pt", padding=True))
-    translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
-
-    return translated_text
 #------------------------------------- FUNCIONES DE GUARDADO (FICHEROS Y TEXTOS) ------------------------------------------------------------
 
 def save_text(text,path):
@@ -264,5 +272,8 @@ def save_text(text,path):
 def show_full_text(text):
     display(Markdown(text))
 
+def show_loading_message():
+    with st.spinner("Cargando, por favor espera..."):
+        yield  # Esta línea permite que el spinner se muestre hasta que se complete el bloque de código
 
 

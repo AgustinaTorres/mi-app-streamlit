@@ -4,7 +4,6 @@ from summary_llms import summarize_with_gptneo, summarize_with_distilgpt2
 import streamlit as st
 import os
 
-
 # Carpetas donde se guardan los inputs y outputs.
 input_folder = "raw_data"
 transcription_folder = "processed_data"
@@ -97,6 +96,9 @@ def video_pipeline(video_url, model_name):
 
 def scrapping_pipeline(raw_text, model_name, new_site):
 
+    os.makedirs(transcription_folder, exist_ok=True)
+    save_text(raw_text, output_path_scrapping)
+
     if new_site == "NBC":
         translated_text = translate_to_spanish(raw_text)
     else:
@@ -122,3 +124,4 @@ def scrapping_pipeline(raw_text, model_name, new_site):
     save_text(summarized_text, summary_path_scrapping)
 
     return summarized_text
+

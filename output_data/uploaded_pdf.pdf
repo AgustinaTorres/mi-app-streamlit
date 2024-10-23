@@ -1,113 +1,69 @@
-I. Información general
-II. Tutorización y elección de tema para el TFM
-III. Estructura y formato del TFM
-IV. Propuesta y entrega del anteproyecto
-V. Entrega del proyecto
-VI. Evaluación del proyecto
-VII. Fechas, plazos de entrega y caliÖcación del TFM
-Trabajo Fin de Máster (TF
-
-M
-M)
-El trabajo de ﬁn de máster (TFM) es el módulo ﬁnal del
-realización del TFM es obligatoria para obtener la titula
-Su ﬁnalidad es acreditar que el alumno ha adquirido las
-la titulación correspondiente.
-CONTI
-Lección 1 de 7
-I. Información general
-El trabajo de ﬁn de máster supone redacta
-resulte original, sin que se puedan compa
-compañero de ninguna edición del máster
-
-Máster en Data Science Executive de IMF. La
-ación del máster. 
-s competencias asociadas al máster y que se merece
-NUAR
-ar un trabajo de manera individual, y que
-rtir partes ni epígrafes con el de ningún
-r.
-Elaborar un trabajo práctico donde se inte
-del máster en torno a la ciencia de datos.
-1
-Aplicar los conocimientos obtenidos a lo 
-máster, puesto que se valorará muy posit
-2
-Aplicar las destrezas de planteamiento d
-posibles soluciones técnicas y redactar c
-3
-Demostrar la capacidad de manejar docu
-fuentes, normativas, etc., de manera ade
-4
-Manejar y realizar búsquedas a través de
-bases de datos de artículos y estudios ci
-inclusión de información de fuentes relev
-5
-Ejercitar las competencias de investigaci
-de nueva información, más allá de los co
-6
-Aprender a identiﬁcar la potencial o poten
-tecnologías para su procesamiento en la 
-7
-Emplear herramientas vistas a lo largo de
-8
-Aplicar de forma constante la interpretac
-precisa)
-9
-
-egren diferentes conocimientos adquiridos a lo largo
-.
-largo de los módulos estudiados en el temario del
-tivamente la integración de varios de ellos.
-e enunciado y problema, así como analizar las
-conclusiones propias sobre ello.
-umentación, informes, extracción de datos de diversas
-cuada. 
- las diferentes plataformas de contenido académico,
-entíﬁcos y bibliotecas electrónicas, para el análisis e
-vantes y para ampliar la bibliografía del proyecto.
-ión, innovación y búsqueda, así como de evaluación
-ontenidos de los otros módulos del programa.
-nciales fuentes de datos que permitan aplicar
-elaboración del proyecto.
-el máster en la elaboración del proyecto.
-ión de datos y modelos matemáticos (si así se
-Todo el alumnado tendrá asignada una tutela del módu
-desarrollo. Dicha tutela tiene las funciones de orientar 
-eventualmente, proponer temas relevantes en estas m
-tema recae en cada estudiante.
-Se trata de un trabajo eminentemente práctico, por lo q
-decir, un estudio 100 % teórico), arquitecturas teóricas
-por ejemplo, datasets extraídos de la web de UCI Datas
-datasets artiﬁciales para testeo de algoritmos y código
-que también se pueden encontrar en paquetes de R, qu
-del proyecto. 
-El tutor tiene exclusivamente las siguientes funciones:
-Lección 2 de 7
-II. Tutorización y elección 
-Asesorar al alumnado sobre la idoneidad 
-obstante, el tema del proyecto debe ser e
-responsabilidad.
-1
-Después de haber escogido un tema o ca
-donde se describa de forma detallada el 
-anteproyecto y evaluará si lo considera a
-alumnado tantos cambios como sean ne
-2
-Aprobar la propuesta de proyecto a partir
-3
-
-ulo para la elaboración y realización del trabajo de
-al alumno, vigilar el desarrollo del trabajo y,
-materias, aunque la responsabilidad de la selección del
-que no se aceptarán estudios del estado del arte (es
-o estudios basados en datasets artiﬁciales, como,
-sets (https://archive.ics.uci.edu/ml/datasets.php), o
-o fuente como los existentes en la librería sklearn o
-ue no estén perfectamente justiﬁcados en el contexto
-:
-de tema para el TFM
-del tema propuesto (a partir del anteproyecto). No
-escogido por dicho tema porque, para la
-estructuración de máster, no se puede hacer físico
-desde la manera que se haga.
+97
+Anuario CEIPAZ 2023-2024
+En su obra 100 mitos sobre Oriente Próximo, el profesor Fred Halliday desmontaba la creencia 
+extendida de que la crisis del Mundo Árabe deriva del impacto negativo que ha tenido el con­
+flicto con Israel en los procesos de cambio social y de democratización. Aunque es “indiscutible 
+que el conflicto entre Palestina e Israel ha servido para reafirmar el autoritarismo de los estados 
+vecinos: Egipto, Jordania, Líbano y Siria”, escribía, este enfrentamiento “es una explicación parcial 
+y, a menudo, poco más que un pretexto para la persistencia de los gobiernos autoritarios en los 
+Estados árabes” (Halliday, 2006). Y concluía que “en cualquier caso, los regímenes árabes siempre 
+han tratado de utilizar la ‘prioridad urgente’ del conflicto con Israel para acallar la crítica dirigida 
+a los aspectos más represivos y antidemocráticos de sus gobiernos”. 
+El impacto del conflicto de Gaza en la región
+Rosa Meneses
+Periodista de El Mundo especializada en Oriente Medio y el Magreb
+98
+De Egipto a 
+Siria, de Irán al 
+Golfo, el conflicto 
+palestino-israelí 
+vuelve a ser 
+utilizado como 
+“prioridad 
+urgente” para 
+reforzar la 
+represión de 
+los gobiernos y 
+enrocarse en el 
+poder
+La guerra que estalló el 7 de octubre de 2023 con el ataque terrorista 
+de milicianos del grupo islamista palestino Hamas a Israel y la fulmi­
+nante ofensiva del ejército israelí contra la Franja de Gaza vuelve a 
+presentar un pretexto como oportunidad de reafirmación autoritaria 
+para los países de la región. De Egipto a Siria, de Irán al Golfo, el con­
+flicto palestino-israelí vuelve ser utilizado como “prioridad urgente” 
+para reforzar la represión de los gobiernos y enrocarse en el poder. 
+Al tiempo que supone un problema real de escalada violenta regional 
+con consecuencias imprevisibles. En el momento en que se escribe 
+este texto (abril de 2024), la guerra en Gaza continúa y con ella si­
+guen evolucionando sus consecuencias en Oriente Próximo, por lo 
+que los análisis también se encuentran en proceso de transforma­
+ción según los nuevos acontecimientos que se vayan sucediendo.
+Devastación y contagio
+La ofensiva militar israelí contra Gaza ha provocado como conse­
+cuencia la peor catástrofe humanitaria que ha sufrido una pequeña 
+banda de territorio de la dimensión de la Franja (de apenas 365 ki­
+lómetros cuadrados densamente poblados) en lo que llevamos de 
+siglo, por el nivel de muerte y devastación causado y su rápido dete­
+rioro en el tiempo. Un dato publicado por la Agencia de la ONU para 
+los Refugiados Palestinos (UNRWA) lo certifica: en los primeros cua­
+tro meses de conflicto murieron más niños y niñas palestinos que en 
+los últimos cuatro años de guerras a nivel mundial (Lazzarini, 2024). 
+Cuando se cumplían seis meses de confrontación los muertos pa­
+lestinos (la inmensa mayoría de ellos, civiles) superaban los 33.000, 
+a los que había que sumar las más de 8.000 personas desapareci­
+das (en su mayor parte, muertas bajo los escombros de los edificios 
+bombardeados) y las más de 76.000 heridas. De los 2,3 millones de 
+palestinos residentes en la Franja de Gaza, el 75% habían perdido sus 
+hogares y medios de vida. 
+A este alto grado de destrucción se une el efecto contagio del conflic­
+to, con un potencial devastador que ya ha sido probado en la historia 
+reciente. La violencia ha extendido sus tentáculos al Líbano, Siria, 
+Irak y Yemen, países con una importante presencia de milicias arma­
+das aliadas de Irán que han protagonizado enfrentamientos con el 
+ejército israelí y que han sido objeto de ataques de éste y de las fuer­
+zas de Estados Unidos. Irán –cómodo en un principio a la sombra de 
+sus proxies– también acabó viéndose afectado directamente, cuando 
+se traspasaron los seis meses de guerra. Jordania y Egipto –primeros 
+países árabes firmantes de sendos tratados de paz con Israel– miran ilegalmente a los
+esploradores del mundo.

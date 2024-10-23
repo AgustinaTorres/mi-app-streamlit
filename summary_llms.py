@@ -14,6 +14,7 @@ def summarize_with_gptneo(text):
     # Texto de entrada
     prompt = (
         "Por favor, resume el siguiente texto **EN ESPAÑOL**. "
+        "El resumen no debe incluir indices ni avisos de suscripciones."
         "El resumen debe ser claro y coherente, sin incluir información no solicitada ni texto en inglés. "
         f"{text}\n"
         "Resumen:"
@@ -70,7 +71,6 @@ def summarize_with_gptneo(text):
     return summary
 
 def summarize_with_distilgpt2(text):
-    st.write("cambio del modeloooooo")
 
     # Cargar el tokenizador y modelo DistilGPT-2
     tokenizer = AutoTokenizer.from_pretrained("distilgpt2")
@@ -134,3 +134,6 @@ def summarize_with_distilgpt2(text):
         summary = summary[:last_period_index + 1]  # Incluir el punto
 
     return summary
+
+
+

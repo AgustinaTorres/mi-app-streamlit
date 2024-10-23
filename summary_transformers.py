@@ -89,27 +89,3 @@ def summarize_text(text, summarizer, max_length, chunk_size):
 
 
 
-
-
-
-
-
-# Modificamos la función principal de resumen para ajustar max_length basado en la longitud del chunk
-def summarize_text_tokenizer(text, summarizer, chunk_size):
-    max_length_ratio=0.3
-    chunks = split_text_tokenizer(text, summarizer.tokenizer, chunk_size)
-    summaries = []
-    
-    for chunk in chunks:
-        # Calcula max_length basado en la proporción del tamaño del chunk
-        max_length = int(len(chunk) * max_length_ratio)
-        summary = summarizer.summarize(
-            chunk, 
-            max_length=max_length, 
-            num_beams=7,  # Ajustamos num_beams para mejorar la calidad
-            length_penalty=1.5,  # Penalización ajustada para permitir algo más de longitud
-            early_stopping=True  # Detenemos la generación tempranamente si es necesario
-        )
-        summaries.append(summary)
-    
-    return ' '.join(summaries)

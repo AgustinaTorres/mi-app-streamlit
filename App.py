@@ -2,16 +2,10 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from pipelines import pdf_pipeline, video_pipeline, scrapping_pipeline
-from functions import get_user_web_selection, scrape_web_header, scrape_news
-
+from functions import get_user_web_selection, scrape_web_header, scrape_news, show_loading_message
 
 # Configurar el título principal y la disposición de la página
 st.set_page_config(page_title="TRABAJO FINAL DE MASTER - Torres Moray, Agustina", layout="wide")
-
-def show_loading_message():
-    with st.spinner("Cargando, por favor espera..."):
-        yield  # Esta línea permite que el spinner se muestre hasta que se complete el bloque de código
-
 
 # --------------------------------------------- DISEÑO DE PAGINAS---------------------------------------------------------------------
 

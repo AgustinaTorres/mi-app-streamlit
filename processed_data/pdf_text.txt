@@ -1,628 +1,808 @@
-I. Información general
-II. Tutorización y elección de tema para el TFM
-III. Estructura y formato del TFM
-IV. Propuesta y entrega del anteproyecto
-V. Entrega del proyecto
-VI. Evaluación del proyecto
-VII. Fechas, plazos de entrega y caliÖcación del TFM
-Trabajo Fin de Máster (TF
-
-M
-M)
-El trabajo de ﬁn de máster (TFM) es el módulo ﬁnal del
-realización del TFM es obligatoria para obtener la titula
-Su ﬁnalidad es acreditar que el alumno ha adquirido las
-la titulación correspondiente.
-CONTI
-Lección 1 de 7
-I. Información general
-El trabajo de ﬁn de máster supone redacta
-resulte original, sin que se puedan compa
-compañero de ninguna edición del máster
-
-Máster en Data Science Executive de IMF. La
-ación del máster. 
-s competencias asociadas al máster y que se merece
-NUAR
-ar un trabajo de manera individual, y que
-rtir partes ni epígrafes con el de ningún
-r.
-Elaborar un trabajo práctico donde se inte
-del máster en torno a la ciencia de datos.
-1
-Aplicar los conocimientos obtenidos a lo 
-máster, puesto que se valorará muy posit
-2
-Aplicar las destrezas de planteamiento d
-posibles soluciones técnicas y redactar c
-3
-Demostrar la capacidad de manejar docu
-fuentes, normativas, etc., de manera ade
-4
-Manejar y realizar búsquedas a través de
-bases de datos de artículos y estudios ci
-inclusión de información de fuentes relev
-5
-Ejercitar las competencias de investigaci
-de nueva información, más allá de los co
-6
-Aprender a identiﬁcar la potencial o poten
-tecnologías para su procesamiento en la 
-7
-Emplear herramientas vistas a lo largo de
-8
-Aplicar de forma constante la interpretac
-precisa)
-9
-
-egren diferentes conocimientos adquiridos a lo largo
-.
-largo de los módulos estudiados en el temario del
-tivamente la integración de varios de ellos.
-e enunciado y problema, así como analizar las
-conclusiones propias sobre ello.
-umentación, informes, extracción de datos de diversas
-cuada. 
- las diferentes plataformas de contenido académico,
-entíﬁcos y bibliotecas electrónicas, para el análisis e
-vantes y para ampliar la bibliografía del proyecto.
-ión, innovación y búsqueda, así como de evaluación
-ontenidos de los otros módulos del programa.
-nciales fuentes de datos que permitan aplicar
-elaboración del proyecto.
-el máster en la elaboración del proyecto.
-ión de datos y modelos matemáticos (si así se
-Todo el alumnado tendrá asignada una tutela del módu
-desarrollo. Dicha tutela tiene las funciones de orientar 
-eventualmente, proponer temas relevantes en estas m
-tema recae en cada estudiante.
-Se trata de un trabajo eminentemente práctico, por lo q
-decir, un estudio 100 % teórico), arquitecturas teóricas
-por ejemplo, datasets extraídos de la web de UCI Datas
-datasets artiﬁciales para testeo de algoritmos y código
-que también se pueden encontrar en paquetes de R, qu
-del proyecto. 
-El tutor tiene exclusivamente las siguientes funciones:
-Lección 2 de 7
-II. Tutorización y elección 
-Asesorar al alumnado sobre la idoneidad 
-obstante, el tema del proyecto debe ser e
-responsabilidad.
-1
-Después de haber escogido un tema o ca
-donde se describa de forma detallada el 
-anteproyecto y evaluará si lo considera a
-alumnado tantos cambios como sean ne
-2
-Aprobar la propuesta de proyecto a partir
-3
-
-ulo para la elaboración y realización del trabajo de
-al alumno, vigilar el desarrollo del trabajo y,
-materias, aunque la responsabilidad de la selección del
-que no se aceptarán estudios del estado del arte (es
-o estudios basados en datasets artiﬁciales, como,
-sets (https://archive.ics.uci.edu/ml/datasets.php), o
-o fuente como los existentes en la librería sklearn o
-ue no estén perfectamente justiﬁcados en el contexto
-:
-de tema para el TFM
-del tema propuesto (a partir del anteproyecto). No
-escogido por dicho alumnado, así como su
-ategoría para el proyecto, recibirá un anteproyecto
-proyecto que se desea realizar. Revisará el
-decuado, de forma que sea posible solicitar al
-cesarios en el anteproyecto.
-r de la cual el alumnado podrá comenzar a realizar el
-Las categorías disponibles para el TFM de Data Scienc
-Guiar y orientar al alumnado sobre la evol
-desarrollo. En ningún caso esta colaborar
-concretas, ya que el trabajo del alumnado
-el tutor orienta y supervisa, pero no colab
-4
-Data science: orientado a la adquisición, 
-Se deben incluir conclusiones y trabajo a
-Emprendimiento: orientado a un plan de n
-validación de clientes potenciales y en el
-de la compañía. De manera evidente, no s
-para la consecución de la misma, hay qu
-involucradas con la ciencia de datos.
-Cada uno de los tipos de trabajos de ﬁn
-evaluación diferenciados, de modo que 
-uno de los tipos, de manera clara y explí
-
-ce son:
-lución del proyecto o sobre cómo orientar su
-rá en la resolución o desarrollo de cuestiones
-o ha de ser estrictamente individual. En otras palabras,
-bora en el proyecto.
-procesamiento y analítica de datasets interesantes.
- futuro extraído del procesamiento de datos.
-negocio y MVP (minimum viable product), con
- que los datos sean una parte fundamental del valor
-solo hay que basarse en la idea de negocio, si no que,
-e emplear herramientas que estén directamente
-de máster posee unos criterios de
-este debe encuadrarse exclusivamente en
-ícita.
-El trabajo de ﬁn de máster debe responder, en estructu
-integrar conocimientos y competencias adquiridos en d
-especialmente la integración de diversas nociones o fu
-Independientemente del tipo de proyecto elegido y del 
-obligatorios y deberán quedar reﬂejados en el trabajo d
-plantilla-portada-tfm.docx
-39.2 KB
-Lección 3 de 7
-III. Estructura y formato de
-Portada: donde ﬁgure el título, au
-science, arquitectura big data o
-el modelo de portada en el sigu
-Resumen o abstract.
-Introducción y antecedentes.
-
-ra y contenido, a un trabajo de estudio. Además, debe
-diferentes módulos del máster, valorándose
-uentes en el desarrollo del proyecto. 
-desarrollo del mismo, los siguientes apartados son
-de ﬁn de máster de forma clara, concisa y correcta:
-el TFM
-utor, tutor y categoría del proyecto (data
- emprendimiento). Se puede descargar
-uiente enlace:
-normas-apa.docx
-63.7 KB
-CONTI
-pretende conseguir con este proyecto?”. 
-de aprendizaje automático que hagan la m
-SP500”. Una vez establecido el objetivo g
-cuales se deriven del objetivo general y d
-partes principales.
-Material y métodos: si va a emplearse al
-a utilizar alguna máquina virtual o el alum
-principales proveedores Cloud para elabo
-para subir y mantener el código fuente de
-desarrollará en un entorno local en el prop
-Resultados: argumentar y desarrollar tod
-decir, desde la adquisición de fuentes de
-Conclusiones.
-Referencias bibliográﬁcas: se redactará
-bibliográﬁcas. Ver las normas APA en el s
-Anexos.
-
-NUAR
-Por ejemplo: “Realizar una comparativa de algoritmos
-mejor predicción posible en el fondo ﬁnanciero
-general, se detallarán los objetivos especíﬁcos, los
-esarrollen, desglosen y concreten cada una de sus
-guna base de datos relacional o no relacional; si se va
-mnado dispone de alguna cuenta en cualquiera de los
-orar y desplegar el proyecto; si utilizará un repositorio
-el proyecto, o si, por el contrario, todo el proyecto se
-pio equipo del alumno, por ejemplo.
-o el trabajo realizado en el trabajo de ﬁn de máster, es
- datos en origen hasta la obtención de resultados.
-n de acuerdo con las normas APA sobre referencias
-siguiente enlace:
-Cualquier modiﬁcación o adaptación que suponga salir
-comunicada, conocida y aprobada previamente por el t
-El código y otros entregables digitales se remitirán med
-habilitada a tal efecto.
-Asimismo, se deberán cuidar especialmente la ortogra
-importantes en la evaluación global del trabajo de ﬁn de
-dejar lugar a posibles interpretaciones o ambigüedades
-personales en aspectos no directamente relacionados
-ejemplo, interpretar modelos estadísticos, datos o resu
-La extensión recomendada para el trabajo de ﬁn de má
-trabajos con una extensión inferior a 30 páginas ni sup
-otras referencias y anexos), además de los siguientes
-Formato: Word.
-Tipografía: Calibri, Arial o Times New Rom
-Tamaño: 11 puntos para el cuerpo de text
-para clariﬁcar la jerarquía del documento)
-Interlineado: 1,5 líneas.
-Espacio de 6 puntos entre párrafos.
-Texto justiﬁcado.
-Pie de imágenes y gráﬁcas en tamaño 8, 
-
-rse del esquema normalizado planteado deberá ser
-tutor.
-diante la plataforma de depósito para los TFM,
-afía y la gramática, siendo estos aspectos
-e máster. El lenguaje ha de ser claro, conciso y sin
-s, de forma que se evite también aportar opiniones
-s con el carácter técnico del trabajo, como, por
-ultados.
-áster es de 40 a 70 páginas, sin que se pueda entregar
-perior a 100 páginas (excluidos índices, bibliografía y
-aspectos:
-man.
-to (con opción de títulos y subtítulos a 14, 16 o 18,
-).
-centrado.
-CONTI
-3.1. Ejemplos de estructura de
-El índice ha de incluir hasta el nivel 3 de c
-Portada: es obligatorio seguir e incluir los
-La siguiente página a la portada será una
-agradecimientos (opcional). Hasta aquí n
-efectos de la numeración total de página
-Los capítulos de la memoria se han de in
-TFM en Data Science:
-Ejemplo de estructura para un trabajo de ﬁ
-transform and load o ETL:
-1. Portada.
-2. Resumen, abstract.
-3. Introducción y antecedentes.
-4. Objetivos del proyecto.
-5. Material y métodos.
-
-NUAR
-e proyecto.
-capítulos.
-s elementos indicados en la plantilla descargable.
-a página en blanco, seguida de una página de
-no se pondrá número de página, pero sí contará a
-s del proyecto.
-iciar en una nueva página.
-ﬁn de máster que no precisa de extract,
-a. Adquisición de fuentes de datos (por ejem
-acceso a una base de datos relacional o n
-b. Descripción de fuentes de datos.
-c. Análisis exploratorio de datos o EDA (muy
-conclusiones más relevantes sobre el ED
-los datos.
-d. Preprocesado de datos (transformación, e
-de hipótesis estadísticas, etc.).
-e. Selección de variables.
-f. Partición de los datos en conjuntos train y
-g. Aplicación de modelos de aprendizaje aut
-h. Evaluación y validación de modelos de ap
-i. Comparativa de resultados.
-7. Conclusiones.
-8. Referencias bibliográﬁcas.
-9. Anexos.
-Emprendimiento
-1. Portada.
-2. Resumen, abstract.
-
-mplo, múltiples ﬁcheros de una competición Kaggle),
-no relacional, acceso a una API, etc.
-y recomendable al ﬁnalizar este epígrafe incluir
-A); es decir, los principales insights extraídos sobre
-estandarización de variables, aplicación de pruebas
-y test (si se trata de aprendizaje supervisado).
-tomático.
-prendizaje automático.
-4. Objetivos del proyecto.
-5. Material y métodos.
-6. Resultados:
-a. Explicación de la idea de negocio (modo p
-b. Resumen ejecutivo.
-c. Desarrollo de un modelo DAFO.
-d. Desarrollo de un modelo Canvas.
-e. Desarrollo de la idea de negocio (deben e
-datos), así como posibles vías de monetiz
-f. Demostración y prototipo de la idea (en es
-realizado).
-7. Conclusiones.
-8. Referencias bibliográﬁcas.
-9. Anexos.
-
-pitch).
-videnciarse potenciales usos de la ciencia de
-zación y análisis de costes.
-sta parte es donde se mostrará el desarrollo
-Este anteproyecto se evalúa como APTO o NO APTO, e
-tenga que repetir. El proyecto se tendrá que volver a ent
-totalmente reescrito de acuerdo con la recomendación
-hecho de recibir como respuesta del anteproyecto una
-deseche la idea, si no que deberá seguir trabajándose 
-Solo la entrega ﬁnal del proyecto constituye parte de la
-únicamente a que el estudiante seleccione un tema, ám
-objetivos esperados.
-El anteproyecto deberá ser un documento breve, concis
-Lección 4 de 7
-IV. Propuesta y entrega de
-
-Título.
-Tipo (alguno de los anteriores).
-Contexto de negocio o tecnológico.
-Se enviará al tutor la propuesta de idea ju
-las ideas principales que se vayan a desar
-
-es decir, que se pase a la siguiente parte o que esta se
-tregar, modiﬁcado con el feedback del tutor o
-n de esta, hasta obtener la caliﬁcación de APTO. El
-evaluación de NO APTO no quiere decir que se
-en la viabilidad de la misma.
-a caliﬁcación; el anteproyecto está orientado
-mbito y entidad del proyecto adecuado a los créditos y
-so y claro con la siguiente estructura:
-el anteproyecto
-nto con el anteproyecto, que deberá contener
-rrollar en el trabajo ﬁn de máster. 
-CONTI
-Es muy importante que la viabilidad se describa en el a
-de data science, se debe detallar si se dispone o si se 
-emprendimiento, se debe indicar si se cuenta con el ac
-servicio proyectado.
-Resultados esperados.
-Asignaturas o módulos relacionados con
-Métodos, materiales y tecnologías de uso
-Nota: en anteproyectos de data science, e
-las fuentes de datos y, hacer mención al n
-dataset o datasets son aptos para el proye
-
-NUAR
-anteproyecto. Por ejemplo, si se trata de un proyecto
-pueden conseguir los datasets relevantes. Si es de
-cceso a potenciales clientes para validar el producto o
- los objetivos y resultados.
-o potencial.
-es obligatorio incluir un enlace (si es posible) a
-úmero de ﬁlas por columnas, para evaluar si el
-ecto.
-No obstante, por razones obvias, se recomienda encar
-haber visto y estudiado la mayor parte de los módulos q
-Por otra parte, el tutor podrá deﬁnir con cada estudiante
-partes especíﬁcas del trabajo de ﬁn de máster, para su
-Estas entregas intermedias o parciales tienen como ob
-o subsanar errores que puedan condicionar partes suc
-manera independiente ni aislada al conjunto. Por ejemp
-podría ser al terminar el EDA para revisar con el tutor el
-proyecto, mientras que en un anteproyecto de emprend
-Los entregables, como tal, que se esperan del trabajo d
-Memoria con la estructura indicada en las seccio
-Presentación en PowerPoint donde se expliquen 
-consiste, cuáles son sus objetivos, qué tipo de tr
-modelos de aprendizaje automático (si se precisa
-deberá estar en torno a 15 o 30 diapositivas y est
-Lección 5 de 7
-V. Entrega del proyecto
-El trabajo de ﬁn de máster se entregará 
-momento, pero, como máximo, hasta 15
-máster.
-
-recidamente no comenzar la realización del TFM hasta
-que componen el máster.
-e fechas de entregas intermedias, correspondientes a
-u seguimiento y correcta coordinación del proceso.
-bjetivo adecuar el trabajo a las observaciones del tutor
-cesivas del TFM, de forma que no serán evaluables de
-plo, una entrega parcial en un TFM sobre data science
-l alcance que está teniendo hasta el momento el
-dimiento podría ser al ﬁnalizar el Canvas.
-de ﬁn de máster son:
-ones anteriores.
-los aspectos fundamentales del proyecto: en qué
-rabajo se ha realizado, qué datos se han empleado,
-an) y principales conclusiones. La presentación
-tar dirigida a un público no técnico, ya que el objetivo
-a través de la plataforma en cualquier
-5 días antes de la fecha de ﬁnalización del
-Solo se caliﬁcará el trabajo de ﬁn de máster cuando s
-El TFM que debe entregar el alumnado será enviado en
-plataforma. En caso de que la capacidad de esta no pe
-gestor de archivos, pero al menos el PDF del proyecto d
-En la identiﬁcación del archivo informático remitido apa
-del alumno.
-
-e complete la entrega ﬁnal del proyecto.
-n un único documento a través de una tutoría en la
-ermita enviar el archivo íntegro, puede enviarse por otro
-debe enviarse a través de la plataforma.
-arecerán, obligatoriamente, el nombre y dos apellidos
-A continuación, se detallan las rúbricas de evaluación q
-de proyecto. Los ejemplos son indicativos, para que es
-puedan comprender los elementos de interés de cara a
-La evaluación de los diferentes aspectos que integran 
-escalas de competencia, que el alumnado conocerá de
-va a evaluar y caliﬁcar.
-CONTI
-Proyectos data science:  
- 
-Criterio
-Peso
-Descripción
-Ejemp
-Interés
-20%
-Interés de la
-analítica de
-negocio y de
-los datos
-seleccionados.
-Un dat
-reducid
-interés
-compe
-de un p
-una ba
-consid
-Lección 6 de 7
-VI. Evaluación del proyect
-
-que el tutor tendrá en cuenta para caliﬁcar cada tipo
-sta pueda orientar a los estudiantes y para que estos
-a su evaluación en cada tipo de TFM.
-un trabajo ﬁn de máster se realizará según unas
-e antemano para ser consciente de qué es lo que se
-NUAR
-plo
-taset con un número de ﬁlas y columnas
-do de un repositorio como UCI, se considera de
-s básico. Sin embargo, un dataset de una
-etición de Kaggle, de una web de datos abiertos,
-proyecto de web scrapping o raspado web, de
-ase de datos relacional o de una API REST se
-dera de tipo avanzado. También se deben tener
-to
-Desarrollo
-60%
-El uso de
-técnicas y
-métodos de
-analítica.
-Un aná
-vistas 
-desarr
-funcio
-adicion
-signiﬁc
-incluirl
-consid
-Presentación
-20%
-Calidad de la
-narración, de
-las
-visualizaciones
-y, en general, la
-presentación
-de los
-resultados.
-Un aná
-alguno
-Pero, s
-se utili
-hallazg
-tanto d
-consid
-Siemp
-vídeo, 
-analític
-Proyectos emprendimiento: 
- 
-Criterio
-Peso
-Descripción
-Eje
-Idea y
-validación
-40%
-El interés y la
-novedad de la
-idea, el nivel en
-que se ha
-validado con
-potenciales
-clientes y la
-calidad del
-Una
-alg
-med
-ser
-inno
-com
-ha v
-exp
-
-álisis que haga uso de técnicas y funciones
-en los módulos se consideraría solamente un
-rollo básico. Por otra parte, si se utilizan
-nes más avanzadas, bibliotecas o técnicas
-nales (siempre y cuando aporten algo
-cativo al análisis, no por el mero hecho de
-lo) y se buscan operaciones más eﬁcientes, se
-derará de tipo avanzado.
-álisis si hilo conductor claro y que solo comente
-os resultados sería una presentación básica.
-si la descripción del análisis está autocontenida,
-zan gráﬁcos avanzados que muestren
-gos interesantes y se tiene una buena narración
-de las preguntas como de los resultados, se
-deraría una narración avanzada.  
-re se valorará positivamente la inclusión de un
-a modo de demo, en el que se explique la
-ca realizada.
-mplo
-a idea que repite empresas ya existentes con
-una pequeña variación y que se ha validado
-diante una encuesta entre potenciales usuarios
-ía de un nivel básico. Mientras que una idea
-ovadora, con un claro análisis de la
-mpetencia que demuestre sus fortalezas, que se
-validado con encuestas, visitas a empresas y
-pertos, sería de nivel avanzado.
-Producto
-mínimo
-viable (MVP)
-40%
-Nivel de desarrollo
-de la idea y del
-prototipo de
-solución.
-Un 
-con
-con
-aun
-tran
-con
-Presentación
-20%
-Calidad del pitch y
-de la
-comunicación a
-inversores y
-potenciales
-clientes.
-Ade
-pre
-con
-víde
-inte
-con
-Una vez realizada la memoria y la presentación, se con
-la entrega del proyecto, y se establecerá con esta un h
-que se realice la presentación del proyecto que se le ha
-La presentación del proyecto tendrá una duración máxi
-realizará las preguntas de evaluación sobre el proyecto
-
-MVP sin funcionalidad, solo de apariencia, se
-nsideraría de un nivel básico. En cambio, un MVP
-n alguna funcionalidad clave implementada,
-nque sea simulada para el prototipo y que
-nsmita claramente el customer journey,
-nstituiría un nivel avanzado.
-emás de la memoria del proyecto, una
-esentación PowerPoint tradicional se
-nsideraría de un nivel básico. Pero el uso de un
-eo, animaciones, simulación u otros elementos
-eractivos con capacidad de atracción se
-nsiderarían de un nivel intermedio o avanzado.
-ntactará con el tutor a través del campus para realizar
-orario para defenderlo (por videoconferencia), en el
-aya enviado previamente.
-ima de 20 minutos, después de la cual el tutor
-o que considere oportunas.
-El trabajo de ﬁn de máster puede ir planteándose a med
-aconseja encarecidamente dejar este módulo para el ﬁ
-visto suﬁcientes tecnologías y experimentado con ellas
-proyecto. Además, solamente podrá presentarse si pre
-módulos que componen el máster.
-Como tal, la fecha ﬁnal para disponer del TFM caliﬁcad
-parte del alumnado.
-Todo trabajo ﬁn de máster debe ser original, de modo q
-plagiado o fraudulento. Los TFM tendrán caliﬁcación e
-Lección 7 de 7
-VII. Fechas, plazos de entr
-TFM
-
-El PLAGIO es m
-El directos llevará a cabo diferen
-desarrollo del trabajo del alumna
-Si se detecta un plagio en la me
-automáticamente suspenso.
-
-dida que se avanza en el máster. No obstante, se
-ﬁnal, ya que será el momento en que el alumnado haya
-s como para poder elaborar una propuesta ﬁrme de
-eviamente se tienen ﬁnalizados y aprobados todos los
-do es la fecha ﬁnal de matriculación al máster por
-que no será válido cualquier TFM que sea considerado
-ntre 0 y 10.
-rega y caliﬁcación del
-motivo de suspenso.
-ntes comprobaciones a lo largo del
-ado. 
-moria entregada, el TFM quedará
+97
+Anuario CEIPAZ 2023-2024
+En su obra 100 mitos sobre Oriente Próximo, el profesor Fred Halliday desmontaba la creencia 
+extendida de que la crisis del Mundo Árabe deriva del impacto negativo que ha tenido el con­
+flicto con Israel en los procesos de cambio social y de democratización. Aunque es “indiscutible 
+que el conflicto entre Palestina e Israel ha servido para reafirmar el autoritarismo de los estados 
+vecinos: Egipto, Jordania, Líbano y Siria”, escribía, este enfrentamiento “es una explicación parcial 
+y, a menudo, poco más que un pretexto para la persistencia de los gobiernos autoritarios en los 
+Estados árabes” (Halliday, 2006). Y concluía que “en cualquier caso, los regímenes árabes siempre 
+han tratado de utilizar la ‘prioridad urgente’ del conflicto con Israel para acallar la crítica dirigida 
+a los aspectos más represivos y antidemocráticos de sus gobiernos”. 
+El impacto del conflicto de Gaza en la región
+Rosa Meneses
+Periodista de El Mundo especializada en Oriente Medio y el Magreb
+98
+De Egipto a 
+Siria, de Irán al 
+Golfo, el conflicto 
+palestino-israelí 
+vuelve a ser 
+utilizado como 
+“prioridad 
+urgente” para 
+reforzar la 
+represión de 
+los gobiernos y 
+enrocarse en el 
+poder
+La guerra que estalló el 7 de octubre de 2023 con el ataque terrorista 
+de milicianos del grupo islamista palestino Hamas a Israel y la fulmi­
+nante ofensiva del ejército israelí contra la Franja de Gaza vuelve a 
+presentar un pretexto como oportunidad de reafirmación autoritaria 
+para los países de la región. De Egipto a Siria, de Irán al Golfo, el con­
+flicto palestino-israelí vuelve ser utilizado como “prioridad urgente” 
+para reforzar la represión de los gobiernos y enrocarse en el poder. 
+Al tiempo que supone un problema real de escalada violenta regional 
+con consecuencias imprevisibles. En el momento en que se escribe 
+este texto (abril de 2024), la guerra en Gaza continúa y con ella si­
+guen evolucionando sus consecuencias en Oriente Próximo, por lo 
+que los análisis también se encuentran en proceso de transforma­
+ción según los nuevos acontecimientos que se vayan sucediendo.
+Devastación y contagio
+La ofensiva militar israelí contra Gaza ha provocado como conse­
+cuencia la peor catástrofe humanitaria que ha sufrido una pequeña 
+banda de territorio de la dimensión de la Franja (de apenas 365 ki­
+lómetros cuadrados densamente poblados) en lo que llevamos de 
+siglo, por el nivel de muerte y devastación causado y su rápido dete­
+rioro en el tiempo. Un dato publicado por la Agencia de la ONU para 
+los Refugiados Palestinos (UNRWA) lo certifica: en los primeros cua­
+tro meses de conflicto murieron más niños y niñas palestinos que en 
+los últimos cuatro años de guerras a nivel mundial (Lazzarini, 2024). 
+Cuando se cumplían seis meses de confrontación los muertos pa­
+lestinos (la inmensa mayoría de ellos, civiles) superaban los 33.000, 
+a los que había que sumar las más de 8.000 personas desapareci­
+das (en su mayor parte, muertas bajo los escombros de los edificios 
+bombardeados) y las más de 76.000 heridas. De los 2,3 millones de 
+palestinos residentes en la Franja de Gaza, el 75% habían perdido sus 
+hogares y medios de vida. 
+A este alto grado de destrucción se une el efecto contagio del conflic­
+to, con un potencial devastador que ya ha sido probado en la historia 
+reciente. La violencia ha extendido sus tentáculos al Líbano, Siria, 
+Irak y Yemen, países con una importante presencia de milicias arma­
+das aliadas de Irán que han protagonizado enfrentamientos con el 
+ejército israelí y que han sido objeto de ataques de éste y de las fuer­
+zas de Estados Unidos. Irán –cómodo en un principio a la sombra de 
+sus proxies– también acabó viéndose afectado directamente, cuando 
+se traspasaron los seis meses de guerra. Jordania y Egipto –primeros 
+países árabes firmantes de sendos tratados de paz con Israel– miran 
+con preocupación un conflicto a las puertas de su geografía. Los 
+Estados adheridos a los Acuerdos de Abraham promocionados en 
+99
+2020 por el presidente de EEUU Donald Trump –Emiratos Árabes Uni­
+dos, Bahrein, Sudán y Marruecos– permanecen expectantes ante el 
+evidente fracaso de la iniciativa que plantea la guerra en Gaza. 
+El sucesor de Trump en la Casa Blanca, Joe Biden, continuó con la po­
+lítica de normalización de relaciones de los países árabes con Israel 
+pese a que esto significaba dejar de lado la resolución de la cuestión 
+palestina. Tras muchas negociaciones, el demócrata esperaba sumar 
+a la coalición de Abraham una ambiciosa pieza: Arabia Saudí. Pero el 
+estallido de la guerra de Gaza ha hecho que este proceso de adhe­
+sión se mantenga congelado por ahora. Si no se hubiera frustrado, 
+un acuerdo con Arabia Saudí habría alineado con Israel al Estado 
+árabe hoy por hoy más pujante, debilitando aún más a los palestinos 
+y disminuyendo aún más la perspectiva de que alcanzasen cualquie­
+ra de sus objetivos nacionales (Khalidi, 2024). En un momento en 
+que la diplomacia saudí volvía a brillar en el exterior tras años de 
+ostracismo por el asesinato del periodista crítico Jamal Khashoggi 
+en 2018, el 7 de octubre devolvió a Riad a una política de perfil 
+duro en el conflicto palestino-israelí. El reino del desierto interrum­
+pió las negociaciones con Israel y condicionó una normalización al 
+reconocimiento de un Estado palestino, volviendo a su cacareado 
+plan presentado en la Cumbre Árabe del año 2000. Está por ver si 
+los Acuerdos de Abraham consiguen sobrevivir al seísmo regional 
+de la guerra en Gaza. Por ahora, en la diplomacia regional destaca 
+un rival de Arabia Saudí, Qatar, que ha emergido de su ostracismo 
+para llevar a cabo una iniciativa mediadora junto con Egipto, dadas 
+sus buenas relaciones con Estados Unidos, Israel y Hamas. El Estado 
+qatarí, como consecuencia, ha propulsado su diplomacia y ha recu­
+perado su capacidad como poder blando debilitado por el bloqueo 
+que le impuso Arabia Saudí entre 2017 y 2021.  
+Desde una perspectiva regional, la guerra de Gaza ha cambiado el pa­
+radigma dominante en el conflicto palestino-israelí desde los Acuer­
+dos de Oslo. Ha provocado que la solución de los dos Estados vuelva 
+al corazón del debate en el seno de la comunidad internacional, ha 
+devuelto al epicentro del problema la cuestión de los refugiados y 
+otros asuntos pendientes durante décadas y ha puesto en cuestión 
+el papel de los actores políticos principales hasta entonces y atraí­
+do otros nuevos. Si bien los pactos trenzados por Trump intentaron 
+hacer precisamente esto, cambiar esas reglas dominantes, enterrar 
+la cuestión palestina y circundarla con acuerdos básicamente comer­
+ciales, no han sido tan determinantes para forjar una nueva realidad 
+como sí lo ha sido este nuevo estallido de violencia entre Israel y los 
+palestinos, en un nuevo episodio de lo que viene aconteciendo a los 
+ojos del mundo al menos claramente desde 1917: una guerra del 
+movimiento sionista, apoyado por las potencias mundiales, en va­
+rios ciclos contra la población indígena de Palestina para desposeer­
+100
+El gran punto de 
+inflexión en el 
+conflicto regional 
+se produjo el 
+1 de abril de 
+2024, cuando un 
+ataque atribuido 
+a Israel destruyó 
+el consulado de 
+Irán en Damasco, 
+rompiendo con 
+una regla de 
+la legislación 
+internacional
+la y reemplazarla por un Estado nacional judío (Khalidi, 2022). Este 
+marco explica tanto los acontecimientos históricos a través de este 
+siglo largo como la brutalidad de la que la comunidad internacional 
+está siendo testigo –casi impasible– a raíz del 7 de octubre. 
+Irán y el fin de la “paciencia estratégica”
+El gran punto de inflexión en el conflicto regional se produjo el 1 de 
+abril de 2024, cuando un ataque atribuido a Israel –Estado que nunca 
+confirma ni desmiente sus operaciones en el exterior– destruyó el 
+consulado de Irán en Damasco y asesinó a siete altos cargos de la 
+Guardia Revolucionaria iraní, además de un mando del grupo liba­
+nés Hizbulá y cuatro ciudadanos sirios que no fueron identificados. 
+Entre los muertos se encontraba el que probablemente era el objeti­
+vo principal de los misiles israelíes, el general de brigada Mohamad 
+Reza Zahedi, quien fuera líder de la Fuerza Al Quds (unidad de élite 
+de la Guardia Revolucionaria) en Líbano y Siria y ejercía un destacado 
+papel en las relaciones entre Teherán y Damasco. El bombardeo rom­
+pió con una regla de la legislación internacional, consignada en la 
+Convención de Viena de 1961, que define las misiones diplomáticas 
+como inviolables. Irán lo consideró una agresión directa, por cuanto 
+las legaciones de un país en el exterior se consideran territorio nacio­
+nal, e invocó su “derecho legítimo a la defensa” (tal y como Israel sue­
+le reclamar el suyo, aunque con reacciones totalmente dispares de la 
+comunidad internacional). Además, el ataque en Damasco mostró un 
+flanco débil de la Guardia Revolucionaria ante la Inteligencia israelí, 
+que antes de esta acción ya había asesinado hasta a 18 de sus miem­
+bros en Siria. En un momento tan crítico para la región, que los F16 
+israelíes lanzaran sus misiles a plena luz del día en un Estado enemi­
+go sin que las baterías antiaéreas sirias fueran capaces de reaccionar 
+era la traducción del dominio de la Inteligencia israelí en este frente. 
+La tensión se disparó a límites máximos. Irán advirtió de que llevaría 
+a cabo las acciones “adecuadas” para responder a tal ataque. Cuando 
+Irán llevaba meses eludiendo la guerra directa, pero instigando a sus 
+aliados contra Israel, ahora se veía obligado a tomar la iniciativa para 
+no mostrarse frágil ante sus socios regionales y ante la mirada de los 
+países árabes vecinos y, en especial, Arabia Saudí, potencia con la 
+que rivaliza por la hegemonía política de Oriente Próximo.  
+La respuesta se haría esperar varios días y llegaría finalmente el 13 
+de abril, cuando la República Islámica lanzó varios centenares de 
+drones y misiles contra el espacio aéreo israelí. El 99% de ellos fueron 
+interceptados por Israel y sus aliados y los daños fueron mínimos. 
+Esa fue precisamente la intención. Irán lo calificó de “respuesta limi­
+101
+tada, calculada y muy bien calibrada”. No obstante, esta acción su­
+puso una ruptura en las reglas de confrontación entre ambos países, 
+que durante décadas habían mantenido una guerra en la sombra. 
+Teherán abandonaba así esa confrontación opaca a través de sus 
+proxies en la región y tomaba en sus manos la iniciativa defensiva 
+(Meneses, 2024). Así lo avisó y explicó en los días posteriores, cuan­
+do se multiplicaron las declaraciones de sus altas instancias para 
+concretar que los tiempos de la “paciencia estratégica” dejaban paso 
+a una nueva doctrina de “defensa directa en múltiples planos”. 
+Este giro estratégico supone abrir la veda a la respuesta directa en 
+caso de un ataque a sus nacionales o a sus intereses. Significa que el 
+contexto de la guerra de Gaza ha provocado un cambio de paradig­
+ma en materia de seguridad que abre una etapa con nuevas reglas 
+de confrontación en la región. La “paciencia estratégica” fue estable­
+cida por el ayatolá Ali Jamenei tras la guerra con Irak y consistía en 
+invertir y entrenar a milicias afines en la región que dieran la cara por 
+el régimen iraní ante su archienemigo, lo que suponía un enfrenta­
+miento indirecto con Israel. Así fue como la Guardia Revolucionaria 
+invirtió y entrenó a milicias como la libanesa Hizbulá, fortaleció los 
+vínculos con Hamas en Gaza, ganó influencia en Irak a través de gru­
+pos armados chiíes que aprovecharon el ascenso de esta comunidad 
+tras la caída de Sadam Husein e intervino en la guerra de Yemen a 
+favor de los rebeldes huzíes.  
+Esto no significa que Irán vaya a dejar de hablar a través de estas 
+milicias, que conforman el autodenominado Eje de la Resistencia for­
+jado por Teherán frente a Israel. Pero el tabú de un ataque directo 
+de Irán a Israel se rompió definitivamente el 13 de abril y eso abre 
+nuevas incertidumbres en este plano de enfrentamiento. Israel, que 
+hace años ya declaró a la República Islámica como “amenaza existen­
+cial”, represalió la acción del 13 de abril con un ataque contra varios 
+objetivos en territorio iraní: Isfahan y Tabriz. Era un mensaje claro 
+al programa nuclear iraní –Isfahan alberga una de las instalaciones 
+más importantes–, que está en la mira de Israel. A la vez, fue una 
+contra-respuesta controlada para no enfadar ni alejarse demasiado 
+de la advertencia de su aliado Estados Unidos para que no iniciase 
+una escalada que pudiera llevar a una drástica guerra regional a la 
+que Washington se viera arrastrado. No era la primera vez que Israel 
+golpeaba directamente territorio iraní, teatro de operaciones encu­
+biertas, ciberataques, bombardeos con drones, asesinatos selecti­
+vos, robo de secretos... Pero el daño ya estaba hecho, porque si no 
+hubiera sido por sus aliados y porque Irán avisó de su acción con an­
+telación a algunos de sus interlocutores en la región, Israel se habría 
+visto en un gran aprieto el 13 de abril con consecuencias imprevistas 
+y devastadoras para todos los actores de la región. 
+102
+La guerra 
+de Gaza ha 
+provocado 
+un cambio de 
+paradigma 
+en materia de 
+seguridad que 
+abre una etapa 
+con nuevas reglas 
+de confrontación 
+en la región
+Ambos países se sienten heridos tras esta cadena de acontecimien­
+tos y pueden dar más pasos para restaurar el orgullo perdido. Israel 
+puede verse tentado de reproducir su respuesta a escala y golpear a 
+los proxies de Irán. Los enturbantados, por su parte, pueden utilizar 
+el programa nuclear como arma disuasoria después de una etapa de 
+pactos con Occidente en lo que ha sido la máxima representación de 
+esa “paciencia estratégica” ahora abandonada. Con los moderados y 
+reformistas –artífices del Acuerdo Nuclear de 2015– fuera de foco, 
+la esfera de poder de la antigua Persia está ahora dominada por los 
+ultraconservadores, proclives a fortalecer el programa atómico con 
+fines militares –hasta ahora, Irán ha reclamado su derecho a utilizar 
+tecnología nuclear civil–. Esta alternativa puede ser un medio de re­
+acción a largo plazo dentro de una dinámica de escalada modulada 
+(Barnes-Dacey, Bianco, Lovatt, 2024) que le serviría al régimen de los 
+ayatolás para restaurar su capacidad disuasoria por medio de su po­
+tencial nuclear, más allá de la dinámica de amenaza por delegación a 
+través de sus franquiciados.    
+Todo ello ocurre en un momento en que el régimen iraní se encuen­
+tra cercado internamente por las oleadas de protestas y por una eco­
+nomía en colapso. La guerra de Gaza y más concretamente el ataque 
+de Damasco y sus respuestas han convenido al Gobierno de Teherán 
+para desviar la atención de los problemas en el frente doméstico. 
+Desde septiembre de 2022, un movimiento contra la obligatoriedad 
+de llevar velo ha tomado las calles en manifestaciones eminentemen­
+te femeninas que estallaron a raíz de la muerte de la joven Mahsa 
+Amini bajo arresto policial, tras ser detenida por no llevar esta pren­
+da según marca la ley. Otros sectores de la sociedad, como médicos, 
+abogados, educadores o sindicalistas se han levantado también con­
+tra las políticas erráticas y represoras del régimen. Desde entonces, 
+la represión ha ido en aumento, para intentar contrarrestar y acallar 
+a críticos, disidentes y activistas. La cuestión palestina ha sido, una 
+vez más, utilizada como elemento cauterizador del descontento y 
+para aglutinar de nuevo posturas divergentes en torno a eslóganes 
+monotemáticos. 
+En este contexto se celebraron las elecciones parlamentarias del 1 
+de marzo, en las que los ultraconservadores salieron reforzados, ca­
+pitalizando el delicado momentum regional. Antes del 7 de octubre, 
+Oriente Próximo experimentaba una serie de movimientos estratégi­
+cos que involucraban diferentes actores y acuerdos potenciales. Uno 
+de estos movimientos consistía en la posibilidad de un acuerdo de 
+normalización de relaciones entre Israel y Arabia Saudí, mediado por 
+Estados Unidos, dentro de los mencionados Acuerdos de Abraham. 
+Otro aspecto relevante era la propuesta de establecer el Corredor 
+India-Oriente Próximo-Europa (IMEC, por sus siglas en inglés), pre­
+sentado durante la cumbre del G20 en Nueva Delhi en septiembre 
+103
+de 2023. Este proyecto de conectividad tenía como objetivo unir a 
+India, Emiratos Árabes Unidos (EAU), Arabia Saudí, Jordania e Israel. 
+Estas iniciativas generaban tensiones debido a sus implicaciones 
+contrarias a los intereses hegemónicos de Irán en la región (ElDoh, 
+2023). Además, parecían obstaculizar el proceso de normalización 
+que Teherán y Riad habían acordado en marzo de 2023, con el pro­
+pósito de restablecer los lazos diplomáticos tras siete años de des­
+encuentros. Esta alianza suscitaba preocupación en Israel debido a 
+sus posibles repercusiones. En el nuevo paradigma ocasionado por 
+la guerra de Gaza, Irán se alza como el gran beneficiario en tanto que 
+ha podido romper las tendencias de cooperación y trasladar la ten­
+sión a sus vecinos árabes, a la vez que atrae sentimientos a lo largo 
+de toda la región y en casa para intentar proyectarse como defensor 
+de los palestinos. 
+El interés de Irán en intervenir en el conflicto palestino-israelí se re­
+monta a los primeros tiempos de la República Islámica y arrastra un 
+complejo que se ha denominado “el síndrome de Madrid” (Meneses, 
+2024). Este término hace referencia a la Conferencia de Paz de Ma­
+drid convocada por Estados Unidos en 1991, tras la primera Guerra 
+del Golfo. En dicha cumbre, todos los países relevantes fueron invita­
+dos a participar, con la excepción de Irán. Esta exclusión contribuyó 
+a la percepción de Irán como una amenaza y un obstáculo para la 
+paz en la región. En respuesta a este aislamiento diplomático, Irán 
+optó por una postura radical y comenzó a consolidar lo que se cono­
+ce como el Eje de la Resistencia. Uno de los primeros episodios sig­
+nificativos en esta trayectoria fue su apoyo a la guerra desatada por 
+Israel contra el Líbano en 1996, conocida como la operación Uvas de 
+la Ira. A partir de entonces, se sucedieron una serie de conflictos con 
+grupos respaldados por Teherán, como Hamas en los años 2000, 
+2004, 2008 y 2014, así como con Hizbulá en 2006. Estos grupos, 
+considerados entre los más prominentes patrocinados por Irán en la 
+región, han estado involucrados en acciones armadas y han repre­
+sentado una considerable influencia en el desarrollo del conflicto. 
+La exclusión de Irán de la Conferencia de Paz de Madrid marcó un 
+punto de inflexión en su estrategia regional, llevándolo a adoptar 
+una postura más desafiante con el objetivo de reclamar su lugar en 
+la mesa de negociaciones y afirmar su influencia en la política de 
+Oriente Próximo.
+Dentro del liderazgo iraní, el Proceso de Oslo, que emergió como 
+resultado de los esfuerzos de resolución del conflicto tras la Confe­
+rencia de Paz de Madrid en 1991 y culminó con el establecimiento 
+de la Autoridad Nacional Palestina, es interpretado como un fracaso. 
+La actual escalada bélica en Gaza se percibe como un intento de 
+imponer un nuevo paradigma, u “orden” regional, después de más 
+de tres décadas de retórica sobre la solución de dos Estados que 
+104
+Cuanto más se 
+prolonguen en 
+el tiempo las 
+hostilidades en la 
+Franja palestina, 
+más alto es el 
+riesgo de que 
+la guerra entre 
+Israel y Hizbulá 
+se abra paso
+nunca ha llegado a materializarse. En este contexto, los gobiernos 
+de los países árabes se han visto compelidos a distanciarse de los 
+esfuerzos de aproximación hacia Israel debido a la presión ejercida 
+por la opinión pública, la cual muestra una marcada oposición a la 
+normalización de las relaciones con Israel. Según una encuesta lleva­
+da a cabo al principio del conflicto, el 36% de la opinión pública árabe 
+abogaba por la suspensión o la no materialización de cualquier pro­
+ceso de normalización con Israel (ACRPS, 2024). En este contexto, 
+Irán encuentra un terreno propicio para su estrategia, ya que percibe 
+que, en los escenarios más adversos del conflicto, como una escala­
+da generalizada en Palestina o la extensión de la confrontación hacia 
+Líbano, Egipto y Jordania, podría prevalecer su enfoque y, en una 
+oportunidad de resarcirse del “síndrome de Madrid”, aparecer como 
+actor relevante en el problema palestino.
+Hizbulá, más grande que el Estado libanés
+Desde el 7-O y la ofensiva israelí en Gaza, el Líbano se ha conver­
+tido en el segundo frente más importante de la confrontación. La 
+milicia chií Hizbulá ha lanzado desde el 8 de octubre cientos de pro­
+yectiles contra Israel para demostrar su apoyo a Hamas y distraer 
+a las tropas israelíes en el flanco norte. Y ello ha sido respondido 
+con bombardeos israelíes y escaramuzas en la frontera en lo que 
+ya es el enfrentamiento más grave entre ambos desde la guerra de 
+2006. La violencia ha provocado que unos 200.000 civiles israelíes 
+y libaneses hayan tenido que abandonar sus hogares a partes más o 
+menos iguales a uno y otro lado de la línea de demarcación. Hizbulá, 
+sin embargo, está ejerciendo una presión medida y es evidente que 
+no quiere que el conflicto escale a una guerra abierta. Tampoco Irán, 
+su principal financiador, proveedor y logista, aunque es claro que el 
+Partido de Dios tiene un alto grado de autonomía en sus decisiones. 
+Israel, por su parte, circunscribe mayormente sus respuestas a las 
+áreas fronterizas del sur del país de los cedros. Pero cuanto más se 
+prolonguen en el tiempo las hostilidades en la Franja palestina más 
+alto es el riesgo de que la guerra entre Israel y Hizbulá se abra paso. 
+Todos los análisis conducen a la conclusión de que un estallido béli­
+co es cuestión de tiempo y que Israel lo abordará cuando crea tener 
+controlado el frente de Gaza.
+La milicia chií libanesa no es la misma de 2006. Sus capacidades 
+militares han aumentado y ahora posee fuerzas especiales (la briga­
+da Radwan), drones y misiles capaces de golpear Tel Aviv. Su rama 
+política es hoy por hoy la más poderosa del país árabe y nada se 
+mueve sin que ella lo apruebe. El Partido de Dios, en realidad, es 
+más grande que el Estado, lo ha secuestrado y lo mantiene en una 
+105
+parálisis sistémica que le beneficia, mientras los puestos de presi­
+dente y de jefe del Gobierno (por las leyes de reparto de poder entre 
+comunidades religiosas, estos cargos se reservan respectivamente a 
+cristianos y suníes) permanecen en funciones a la espera de que las 
+negociaciones inclinen la balanza del lado de sus candidatos aliados. 
+Pero Hizbulá no tiene prisa: reina en el caos y el bloqueo político. Pa­
+radójicamente, una cierta prudencia se ha impuesto entre sus líderes 
+ante una escalada bélica, dado el precedente de la destrucción que 
+sufrió el Líbano en la guerra de 2006. Israel ha amenazado varias 
+veces desde el 7-O con llevar al país de los cedros “a la edad de pie­
+dra” –como ya ha hecho en Gaza– y dadas sus acciones presentes y 
+pasadas no diferenciará entre Hizbulá y los libaneses como no lo ha 
+hecho entre Hamas y los palestinos. El paso de combates de intensi­
+dad media a un estallido general sin duda acarreará un grave conflic­
+to armado de consecuencias similares al que ya se vio a finales de los 
+años 70 y 80 (Parkinson, 2023), tras la invasión de Israel y su entrada 
+en la guerra civil del Líbano. Hasta su retirada en el año 2000, el ejér­
+cito israelí permaneció ocupando el sur del Líbano. 
+Un peligroso hito en el actual enfrentamiento fue el asesinato se­
+lectivo del número dos del buró político de Hamas Saleh al Arouri, 
+en Beirut, el 2 de enero de 2024. Una prueba de que Israel sí está 
+dispuesto a forzar las reglas del juego y tiene sus misiles listos para 
+apuntar a la capital libanesa de nuevo. Este hecho estuvo a punto de 
+disparar un conflicto a cara descubierta y muestra que el acicate para 
+iniciarlo puede venir más probablemente de la mano de país hebreo 
+(Barnes-Dacey, Bianco, Lovatt, 2024). Dentro de Israel hay cada vez 
+más voces que reclaman una campaña militar como la acción nece­
+saria para asegurar su flanco norte y permitir el regreso de los casi 
+100.000 israelíes evacuados, empujar a Hizbulá Líbano adentro y 
+degradar sus capacidades. 
+Estados Unidos –con Reino Unido y Francia en la misma dirección– ha 
+puesto en marcha una intensa ofensiva diplomática para evitar la des­
+estabilización de este frente. Y hay indicativos de que incluso apoya la 
+intención de Israel de acometer un cambio en el statu quo fronterizo 
+(Schenker, 2024), aunque más a través de negociaciones y no tanto 
+por medio de la fuerza militar. En las conversaciones diplomáticas, el 
+centro del debate ha vuelto a la Línea Azul –la frontera entre el Líbano 
+e Israel, en disputa desde 1948– y la resolución 1701 establecida en 
+2006 tras la guerra de los 33 días. Esto puede conllevar un movimien­
+to en el mapa pensando en el largo plazo que implique crear una zona 
+tapón y evacuar población libanesa de la frontera. Esta posibilidad es 
+un gran temor entre la población y los políticos del país mediterráneo. 
+Israel, amparado por el conflicto en Gaza, tiene incentivos para inten­
+tar cambiar el statu quo también en el Líbano y esa podría ser una de 
+las consecuencias de la actual confrontación.   
+106
+La demarcación 
+fronteriza entre el 
+Líbano e Israel es 
+en realidad una 
+“línea divisoria” y 
+técnicamente no 
+es una frontera 
+internacional 
+reconocida. 
+Ambas naciones 
+nunca han 
+firmado un 
+tratado de paz
+La demarcación fronteriza entre el Líbano e Israel es en realidad una 
+“línea divisoria” y técnicamente no es una frontera internacional re­
+conocida. Representa una raya de separación establecida por las Na­
+ciones Unidas, la cual ambos países implicados nunca han acordado 
+como su límite fronterizo oficial. Esta delimitación es más bien una 
+delineación de facto que sigue la demarcación establecida por Fran­
+cia y Gran Bretaña en los Acuerdos de Sykes-Picot de 1916. La línea 
+divisoria mencionada fue formalizada como Línea Verde en 1949, 
+resultado del armisticio entre el Líbano e Israel después de la guerra 
+de 1948 que siguió a la creación del Estado de Israel. Sin embargo, 
+a lo largo de las décadas posteriores, especialmente tras la invasión 
+israelí del sur del Líbano en 1978, esta línea se vio difuminada. Pos­
+teriormente, en el año 2000, la ONU la reconoció como Línea Azul 
+cuando Israel retiró sus fuerzas de ocupación del Líbano. A pesar de 
+estos movimientos, ambas naciones nunca han firmado un tratado 
+de paz y se encuentran “técnicamente en guerra” desde entonces. En 
+agosto de 2006, la Resolución 1701 del Consejo de Seguridad de las 
+Naciones Unidas volvió a poner en relieve esta línea divisoria como 
+parte de un acuerdo que puso fin a la guerra entre la milicia chií 
+libanesa Hizbulá y el ejército israelí en ese verano. Esta resolución 
+amplió el mandato de la Fuerza Interina de las Naciones Unidas en 
+el Líbano (FINUL), la cual patrulla la Línea Azul desde 1978, para su­
+pervisar un alto el fuego entre ambas partes y facilitar el despliegue 
+del ejército libanés al sur del río Litani (a unos 30 kilómetros de la 
+frontera), una zona mayormente controlada por Hizbulá y otra mili­
+cia chií aliada, Amal.
+En el actual contexto de escalada de tensiones y enfrentamientos de 
+intensidad media entre las unidades armadas del Partido de Dios y 
+las fuerzas israelíes en la frontera sur del Líbano, se ha renovado el 
+interés por la Resolución 1701 y el área del sur del Líbano, lo que 
+plantea importantes desafíos para la seguridad y la estabilidad re­
+gional. La ONU defiende que la 1701 es aún válida porque, aunque 
+está siendo sometida a tensión, contiene menciones a los principales 
+problemas (la seguridad, la estabilidad, el apoyo al ejército libanés y 
+el camino hacia una solución a largo plazo) quedando contemplados 
+sobre el papel (Meneses, 2024c). Israel presiona para que el grupo 
+armado Hizbulá se retire de una franja de 30 kilómetros al norte de 
+la linde para dejar paso a una zona libre de armamento y de sus 
+efectivos y se aplique la 1701 desplegando al ejército libanés en su 
+lugar, junto a una FINUL reforzada. Los diplomáticos tratan por me­
+dio de negociaciones rebajar el límite a los siete kilómetros. Esto 
+puede implicar cambios en la Línea Azul –existen numerosos puntos 
+en disputa, entre los que destaca la situación de la localidad dividida 
+de Ghajar– de cara a un acuerdo fronterizo definitivo como el que se 
+forjó con la mediación de EEUU en 2022 para las fronteras marítimas 
+entre ambos países. La gran cuestión es si todo ello implicará tam­
+107
+bién movimientos de población en territorio libanés, como parece 
+que es la intención. Ante todo, para negociar de una vez por todas 
+sobre las fronteras tiene que acordarse previamente un alto el fuego 
+tanto en Gaza como en el sur del Líbano. Un arreglo definitivo sobre 
+la frontera contribuiría a evitar tensiones futuras, siempre que ambas 
+partes así lo acuerden.  
+Del Éufrates al Mar Rojo 
+La Siria de Bashar al-Ásad no se ha significado de forma clara sobre 
+el conflicto en Gaza. Sin embargo, Siria lleva años siendo teatro de 
+operaciones de la guerra en la sombra entre Israel e Irán, y en este 
+ciclo de confrontación en la Franja palestina este extremo se ha in­
+tensificado, como se desprende del ataque contra el consulado iraní 
+en Damasco del pasado 1 de abril y de los bombardeos israelíes en 
+los meses previos contra los aeropuertos de Damasco y Alepo. La 
+debilidad del Estado sirio –sumido en una guerra civil desde 2011– y 
+la presencia tanto de la Guardia Revolucionaria iraní como de Hiz­
+bulá –aliados de Asad– han arrastrado a Damasco a las dinámicas de 
+confrontación actuales con Israel que pueden atrapar al país árabe 
+en una espiral de guerra regional si esta se desata. 
+Situación parecida se plantea en Irak, por su parte escenario del en­
+frentamiento entre Irán y Estados Unidos por el dominio del país 
+desde la caída de Sadam Husein en 2003. Un momento de máxima 
+tensión en este choque fue el asesinato selectivo por drones esta­
+dounidenses del comandante Qasem Soleimani –jefe de la Fuerza Al 
+Quds iraní– en Bagdad en 2020. En Irak se alzan los lugares santos 
+más importantes para el islam chií, su geografía es la cuna de esta 
+doctrina y por ello tiene un gran valor político y estratégico para 
+Teherán, que ha utilizado el auge de esta comunidad tras el derroca­
+miento de la dictadura baazista que oprimió a chiíes y kurdos para 
+afianzar su influencia en el territorio. El Gobierno iraquí ha intentado 
+navegar en los últimos años en un complicado equilibrio entre la pre­
+sencia militar de EEUU y la influencia iraní –también militar y políti­
+ca– que ahora, en el contexto de cambio del paradigma regional que 
+está suponiendo el conflicto en Gaza, está saltando por los aires. Un 
+signo es la presión redoblada para que el primer ministro, Moham­
+med Shia al Sudani, negocie la salida o al menos la reducción de las 
+tropas occidentales en el país. La actual misión militar de EEUU y los 
+aliados obedece a prestar ayuda al país árabe para luchar contra el 
+Estado Islámico, que hace una década declaró en Mosul su Califato y 
+amenazaba con conquistar Bagdad. Ya derrotado el grupo yihadista, 
+actualmente unos 2.500 soldados estadounidenses permanecen en 
+Irak y las negociaciones para su retirada se intensificaron el pasado 
+108
+Egipto, que tiene 
+frontera con 
+Gaza, es el vecino 
+más directamente 
+afectado por 
+la devastación 
+y la catástrofe 
+humanitaria que 
+han causado 
+en la Franja 
+palestina los 
+bombardeos 
+israelíes
+enero. Con los bombardeos israelíes en Gaza de fondo, las tropas de 
+Washington desplegadas en Irak han sufrido ataques de las milicias 
+chiíes iraquíes adheridas al Eje de la Resistencia iraní, lo que abona el 
+riesgo de volatilidad en esta cartografía.  
+La onda expansiva de Gaza ha alcanzado el confín de la Península 
+Arábiga. El castigado Yemen se ha convertido en un frente inespera­
+do del conflicto con el resurgimiento de los rebeldes huzíes, que han 
+atacado desde noviembre de 2023 a decenas de buques mercantes 
+en el estratégico estrecho de Bab al Mandab y el Mar Rojo. Por estas 
+aguas pasa el 40% del tráfico de contenedores del mundo y las na­
+vieras más importantes han tenido que desviar sus flotas. Estados 
+Unidos lidera desde diciembre una misión marítima para asegurar 
+el comercio que ha logrado degradar la capacidad disruptiva de los 
+huzíes en el Mar Rojo, aunque no ha detenido por completo sus ata­
+ques. De nuevo, la convulsión en esta zona obedece a una táctica 
+de presión multifrente de las milicias alineadas con Irán, en teoría 
+para forzar un alto el fuego en Gaza. Pero los huzíes tienen también 
+vocación de convertirse en un actor regional decisivo y con estas 
+acciones han buscado obtener réditos políticos y económicos en el 
+futuro de Yemen, que debe resolver su guerra civil, en la que están 
+implicados Arabia Saudí y Emiratos Árabes Unidos, por un lado, e 
+Irán, por otro. Desde hace una década, Yemen ha sido la cartografía 
+en la que se han enfrentado de forma directa ambos bandos y el ac­
+tual resurgimiento de los huzíes ha venido a recordar que urge una 
+solución definitiva del conflicto yemení sin la que el Mundo Árabe no 
+disfrutará de estabilidad. Los focos de tensión en Oriente Próximo 
+muchas veces están conectados.   
+La crisis en el Mar Rojo ha alcanzado a Egipto, que ha visto cómo el 
+impacto se ha trasladado también al Canal de Suez, la ruta impres­
+cindible entre el Mediterráneo y Asia. Este paso es la tercera fuente 
+de ingresos más importante para el país de los faraones, que lleva 
+más de una década sumido en una profunda crisis económica. Egip­
+to, que tiene frontera con Gaza, es el vecino más directamente afec­
+tado por la devastación y la catástrofe humanitaria que han causado 
+en la Franja palestina los bombardeos israelíes. Desde el inicio de 
+su ofensiva, se filtraron los planes de Israel para expulsar a los 2,3 
+millones de habitantes de Gaza hacia el Sinaí. En abril, cuando se 
+rumoreaba la inminencia de una operación contra Rafah –la ciudad 
+palestina más importante justo al otro lado de la frontera egipcia y 
+donde se han apiñado los habitantes expulsados del norte de la Fran­
+ja por la ofensiva israelí– la sombra de un flujo de refugiados masivo 
+hacia Egipto volvía a cernirse sobre el gobierno de Abdel Fatah al 
+Sisi, que rechaza la expulsión o el traslado siquiera temporal de la 
+población palestina hacia su territorio. El régimen egipcio ha sido 
+muy cuestionado por no abrir los pasos fronterizos a la ayuda huma­
+109
+nitaria y plegarse a las exigencias de Israel y su bloqueo a Gaza des­
+de 2007. La cuestión de abrir la frontera con la Franja y el destino de 
+los civiles acosados por el hambre, las enfermedades y las bombas 
+constituyen focos de tensión interna para Al Sisi que –pese a haber 
+presentado las elecciones de diciembre de 2023 como un plebiscito 
+para rechazar la “guerra inhumana” en la vecina Gaza (ganó con el 
+89,6% de los votos)– puede ver cómo se disparan las protestas de 
+una sociedad egipcia descontenta con su clase política y con graves 
+dificultades económicas. 
+También con máxima atención mira Jordania el sino dramático de los 
+palestinos en Gaza y el riesgo de escalada en Cisjordania, donde la 
+violencia del ejército israelí y de las milicias de colonos armados vive 
+un preocupante incremento desde octubre. Esta situación es vista 
+por el reino hachemí como una amenaza a su estabilidad que cues­
+tiona incluso el tratado de paz firmado con Israel en 1994 (Amirah 
+Fernández, 2023). El país acoge a la comunidad más numerosa de 
+refugiados palestinos de todo Oriente Próximo y una repetición del 
+éxodo forzado de 1948 y 1967 supondría una onda sísmica de efec­
+tos todavía desconocidos para el país. Es una línea roja que Jordania 
+ya ha advertido que sería una “declaración de guerra”. Por eso los 
+mensajes tanto del rey Abdalá y de la reina Rania (de origen pales­
+tino, por cierto), como de los responsables políticos del país han 
+sido los más dramáticos y los más activos en favor de un cese de 
+hostilidades. La monarquía se tambalea a medida que la guerra en 
+Gaza sigue su curso y se ve atrapada en sus alianzas contradictorias. 
+Una prueba de fuego fue sin duda el 13 de abril de este 2024, cuan­
+do Jordania ayudó a Israel a defenderse del contraataque de Irán y 
+abatió los drones iraníes que cruzaron su espacio aéreo. La decisión 
+afrontó duras críticas internas, ya encendidas desde octubre. La in­
+certidumbre crece a medida que los focos de conflicto se extienden 
+y Jordania se ve cada vez más incapaz de frenar los planes de Israel 
+de arrasar Gaza.   
+La reaparición del terrorismo yihadista 
+A nivel global, el yihadismo que personifican grupos como Al Qaeda 
+y Estado Islámico (Daesh, en sus siglas en árabe; IS en su acróni­
+mo en inglés) está viviendo una reverberación en 2024, al calor del 
+contexto de la guerra de Gaza. En los últimos meses, los mensajes 
+de estas organizaciones terroristas han revalorizado prioridades ya 
+exploradas como la causa palestina y la lucha contra el sionismo y 
+sus aliados. Mientras el actual conflicto en la Franja palestina no se 
+estabilice, los grupos yihadistas explotarán esta retórica para captar 
+adeptos y revalidar sus amenazas, con el riesgo de aumentar los 
+110
+El yihadismo 
+global ha 
+intentado 
+capitalizar los 
+ataques del 
+7 de octubre 
+perpetrados por 
+Hamas, pese 
+a su histórica 
+rivalidad, 
+utilizando la 
+causa palestina 
+para sus fines
+atentados en Europa y Estados Unidos hasta niveles no vistos desde 
+2015. Así lo demostraron los atentados en Moscú del 22 de marzo 
+de 2024, con 144 muertos, y en Kerman (Irán) el 3 de enero, con 
+casi un centenar de víctimas. Ambos fueron reivindicados por Estado 
+Islámico del Gran Jorasán (Daesh-K), una organización erigida como 
+rama del Daesh que opera principalmente en Afganistán, Pakistán, 
+Rusia e Irán.    
+A pesar de las grandes derrotas infligidas a Al Qaeda y al Estado Islá­
+mico, ambas nebulosas han demostrado su capacidad para adaptar­
+se a la nueva realidad descentralizando sus estructuras de comando. 
+Tras más de cinco años de declive en su actividad terrorista, el IS 
+empezó 2024 anunciando una nueva campaña militar de apoyo a 
+Gaza que se inició con la masacre de Kerman, durante la ceremonia 
+de recuerdo al líder de la Fuerza Al Quds Qasem Soleimani, liquidado 
+por EEUU en 2020. Esta era parte del esfuerzo del IS de descarrilar el 
+proyecto expansionista iraní en Oriente Próximo personificado en su 
+Eje de la Resistencia. El terror prosiguió con la matanza en la discote­
+ca Crocus de Moscú y con la amenaza de atentar contra los estadios 
+de fútbol durante los partidos de la Liga de Campeones europea en 
+la primavera de este año. Sin embargo, el nuevo califa de Daesh, Abu 
+Hafs al Hashimi al Quraishi –el quinto desde la proclamación en 2014 
+de Abu Bakr al Baghdadi, muerto en 2019 en una incursión de fuer­
+zas estadounidenses en Siria– ha preferido mantener un bajo perfil 
+desde que ascendió al trono en agosto de 2023. Su discurso inaugu­
+ral no ha sido difundido al cierre de la edición de este artículo y pue­
+de que aún tarde meses, según reconoce la propia organización en 
+sus medios afines, lo que se interpreta como debilidad estructural. 
+Al Qaeda también ha quedado algo huérfana desde la eliminación 
+de su líder, Ayman al Zawahiri, en julio de 2022, en un bombardeo 
+estadounidense en Kabul. Al Qaeda ni ha reconocido su muerte ni ha 
+nombrado sucesor, descabezada y erradicada de su bastión afgano, 
+la organización terrorista mantiene actividad en Somalia, el Sahel y 
+Yemen. Se especula con que Sayf al Adl será anunciado este 2024 
+como heredero de Zawahiri (Kerman et al, 2024). 
+En esta panorámica general, el yihadismo global ha intentado capita­
+lizar los ataques del 7 de octubre perpetrados por Hamas, pese a su 
+histórica rivalidad, utilizando la causa palestina para sus fines. Con 
+ello esperan atraer lobos solitarios capaces de perpetrar atentados 
+en Occidente. Para este fin, Al Qaeda en la Península Arábiga (AQAP), 
+la rama implantada en Yemen, relanzó recientemente en vídeo su 
+revista en inglés –Inspire– tras una ausencia de varios años. En lo 
+que llama “yihad de fuentes abiertas” incita a simpatizantes a llevar a 
+cabo ataques en EEUU, Reino Unido, Francia y otros países como res­
+puesta a la ofensiva israelí en Gaza a través de una bomba “de factu­
+ra simple hecha con materiales de cocina”. Todo ello ha puesto a los 
+111
+gobiernos europeos en guardia y países como Francia o España han 
+estrechado su seguridad. El punto fuerte del salafismo violento es el 
+“yihadismo de atmósfera” (Kepel, 2021), en el que juegan un papel 
+primordial las redes sociales. Las plataformas online crean una situa­
+ción, una atmósfera, un ambiente donde se pone el foco en un ene­
+migo (recordemos el asesinato del profesor Samuel Paty en Francia) y 
+luego personas no necesariamente afiliadas oficialmente a una orga­
+nización o red, pero socializadas en este contexto, viajan del mundo 
+digital al mundo real para matar. Daesh ya llegó a Europa a mediados 
+de la década pasada: Bruselas, París, Berlín, Barcelona, Manchester... 
+Pero hoy por hoy no hace falta una organización detrás, sino una at­
+mósfera de odio y resentimiento e individuos radicalizados. No son 
+estrictamente lobos solitarios que han sido entrenados y preparados 
+sino individuos que han sido socializados intelectualmente en las 
+redes y ven el mundo a través de los ojos del salafismo. Para ma­
+tar, convertirse en mártires según su terminología, necesitan una 
+ideología, un lavado de cerebro, y las redes proporcionan el medio 
+adecuado.
+Volviendo al terreno de lo real, es en el Sahel donde el yihadismo 
+campa a sus anchas beneficiándose de la debilidad de los Estados, 
+de las rutas de los tráficos ilícitos y de la retirada de Francia y de la 
+misión de la ONU de Mali, Níger y Burkina Faso –tras sendos golpes 
+de Estado–, así como del ascenso de la influencia de Rusia y sus gru­
+pos paramilitares. En esta región relegada de la geopolítica interna­
+cional, Daesh y Al Qaeda libran una lucha intestina por prevalecer so­
+bre el territorio, los recursos y el acceso a la población local –fuentes 
+de ingresos y de carne de cañón– desde febrero de 2020. Todos los 
+estudios de prospectiva consideran que habrá en la faja saheliana un 
+crecimiento de los ataques suicidas, debido al aumento de la activi­
+dad de las franquicias locales de Al Qaeda y del IS. La Unión Europea, 
+que está retirando sus misiones en la región africana arrastrada por 
+el fracaso y el repudio local a las tropas francesas, no debería descui­
+dar este flanco. Francia ha establecido en Costa de Marfil una nueva 
+base para sus tropas expulsadas del Sahel, donde a partir del punto 
+logístico que ya funcionaba para Mali está construyendo un centro 
+de monitorización antiterrorista de África Occidental, pero probable­
+mente esta iniciativa seguirá siendo insuficiente para frenar la cre­
+ciente ola de violencia en toda la subregión que se desarrolla mien­
+tras la comunidad internacional está sólo enfocada en los conflictos 
+de Ucrania y Gaza (The Soufan Center, 2023). El Sahel va camino de 
+convertirse en el siguiente estallido que las potencias mundiales ten­
+gan que abordar en los próximos meses.
+Tampoco hay que desestimar el oscuro potencial que sigue teniendo 
+el grupo terrorista somalí Al Shabab, afiliado a la red fundada por 
+Osama bin Laden y que continuará escalando sus acciones violentas. 
+112
+Aunque la organización está confinada al Cuerno de África e ideoló­
+gicamente no parece tener voluntad de explotar el conflicto en Gaza, 
+no hay que perder de vista su incitación a atacar objetivos de Estados 
+Unidos en una zona estratégica global. El ejemplo de los huzíes, que 
+han desestabilizado con sus ataques el comercio mundial en el Mar 
+Rojo, puede servir de inspiración en la otra orilla. En medio del caos y 
+la inestabilidad del Sahel y Somalia, las franquicias de la yihad global 
+pueden convertir estos territorios en sus caladeros. En el pasado ya 
+se vio, en las guerras de Siria e Irak de la pasada década (para la que 
+el IS reclutó a miles de hombres y mujeres en los países del norte de 
+África) y, más lejos en el tiempo, en el conflicto de Afganistán en los 
+años 80, que las movilizaciones desde las canteras de radicalización 
+a los epicentros bélicos pueden tener efectos desestabilizadores y 
+violentos de ida y vuelta tanto en los países emisores como en des­
+tino. 
+Si la brutalidad sigue siendo el lenguaje, si no se impone un alto el 
+fuego y una hoja de ruta para la Franja de Gaza y para Palestina, si 
+perdura el abandono de la comunidad internacional a los palestinos 
+y se les siguen negando sus derechos a la dignidad y la justicia para 
+imponer el dominio de Israel y la ocupación de la tierra por la fuerza 
+bruta, se sembrarán las semillas para conflictos futuros. La actual 
+guerra de Gaza –con las espeluznantes imágenes de muerte y de­
+vastación que vemos cada día– puede ser utilizada como un efecto 
+llamada al servicio de organizaciones radicales y de regímenes au­
+tócratas con efectos imprevisibles, al tiempo que los conflictos en 
+Oriente Próximo experimentan una escalada general interconectada.
+Referencias bibliográficas
+Álvarez-Ossorio, Ignacio; Hernández, David; Rodríguez, Leticia (2024): “El impacto de 
+la guerra de Gaza en Oriente Medio: Riesgos geopolíticos y escenarios de futuro”. 
+Fundación Alternativas, Documento de Trabajo, Opex. Marzo.
+Amirah Fernández, Haizam (2023): “Jordania ve en las acciones de Israel en Gaza y 
+Cisjordania una amenaza existencial”. Real Instituto Elcano. 23 de noviembre. Dis­
+ponible 
+en: 
+https://www.realinstitutoelcano.org/analisis/jordania-ve-en-las-accio­
+nes-de-israel-en-gaza-y-cisjordania-una-amenaza-existencial/
+Arab Center for Research and Policy Studies (2024): Arab Public Opinion About the 
+Israeli War in Gaza. 10 January. Disponible en: https://www.dohainstitute.org/en/
+News/Pages/arab-public-opinion-about-the-israeli-war-on-gaza.aspx
+Barnes-Dacey, Julien; Bianco, Cinzia; Lovatt, Hugh (2024): “The Gaza Crisis: Map­
+ping The Middle East’s Shifting Battle Lines”. European Council on Foreign Relations. 
+March. Disponible en: https://ecfr.eu/special/the-gaza-crisis-mapping-the-middle-
+easts-shifting-battle-lines/
+ElDoh, Mohamed (2023): “Iran: The Real Beneficiary of The Gaza Conflict”. Geopolitical 
+Monitor. December 13. 
+113
+Halliday, Fred (2006): 100 mitos sobre Oriente Próximo. Global Rythm Press, Barcelona.
+Jalabi, Raya; England, Andrew; Cornish, Chloe (2024): “Arab actions muddy regional 
+dynamics”. Financial Times, 16 April. 
+Kepel, Gilles (2021): El profeta y la pandemia. De Oriente Medio al Yihadismo de 
+Atmósfera. Alianza Editorial. Barcelona.
+Kerman, Y.; Emile, Z.; Choukry, K.; Schierer, M. (2024): “Jihadi Trends: What Is On The 
+Horizon In 2024?”. Jihad and Terrorism Threat Monitor. Middle East Media Research 
+Institute (MEMRI). Disponible en: https://www.memri.org/jttm/jihadi-trends-what-ho­
+rizon-2024
+Khalidi, Rashid (2022): Palestina. Cien años de colonialismo y resistencia. Capitán 
+Swing. Madrid
+Khalidi, Rashid (2024): “A new Abyss: Gaza and the hundred years’ war on Palestine”. 
+The Guardian, 11 April. 
+Lazzarini, Philippe (2024): Post en la red X desde su cuenta @UNLazzarini. 12 de mar­
+zo. Disponible en: https://twitter.com/UNLazzarini/status/1767618985397272831
+Meneses, Rosa (2024a): “Irán inaugura una nueva doctrina de seguridad en Oriente 
+Próximo”. El Mundo, 19 de abril. Disponible en: https://www.elmundo.es/internacio­
+nal/2024/04/18/6621452ee4d4d88c5e8b4583.html 
+Meneses, Rosa (2024b): “Irán arrastra en Gaza el síndrome de Madrid”. El Mundo, 29 
+de febrero. Disponible en: https://www.elmundo.es/internacional/2024/02/29/65d­
+f7b80e9cf4a09098b4588.html
+Meneses, Rosa (2024c): “La Línea Azul, tablero de guerra entre Israel y el Líba­
+no”. El Mundo, 31 de enero. Disponible en: https://www.elmundo.es/internacio­
+nal/2024/01/31/65b7c8d3e9cf4a1d678b45ad.html
+Parkinson, Sarah E. (2023): “The Ghosts of Lebanon”. Foreign Affairs. November 14. 
+Disponible en: https://www.foreignaffairs.com/israel/ghosts-lebanon
+Schenker, David (2024): “Changing the Israel-Lebanon Status Quo: U.S. Options”. 
+Policy Analysis. The Washington Institute for Near East Policy. April 1. Disponible en: 
+https://www.washingtoninstitute.org/pdf/view/18694/en
+The Soufan Center (2023): “The Sahel Continues to Burn as the World Focuses Else­
+where”. IntelBrief. December 13. Disponible en: https://thesoufancenter.org/intel­
+brief-2023-december-13/
