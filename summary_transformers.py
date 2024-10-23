@@ -82,10 +82,3 @@ def summarize_text(text, summarizer, max_length, chunk_size):
         summaries.append(summary)
     return ' '.join(summaries)
 
-
-
-
-
-
-
-

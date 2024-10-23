@@ -83,7 +83,7 @@ with st.sidebar:
     st.markdown("### Memoria del TFM")  # Título adicional
 
     # Botón de descarga para el PDF
-    pdf_file_path = "raw_data/uploaded_pdf.pdf"  # Ruta al archivo PDF
+    pdf_file_path = "assets/TFM_TORRES_MORAY_AGUSTINA.pdf"  # Ruta al archivo PDF
 
     # Usar el botón de descarga
     with open(pdf_file_path, "rb") as pdf_file:
