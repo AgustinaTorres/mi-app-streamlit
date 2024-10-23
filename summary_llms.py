@@ -1,3 +1,4 @@
+# Importar librerias
 from transformers import GPTNeoForCausalLM, GPT2Tokenizer, AutoTokenizer, AutoModelForCausalLM
 import streamlit as st
 

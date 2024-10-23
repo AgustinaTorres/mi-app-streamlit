@@ -1,3 +1,4 @@
+# Importar librerias
 import re
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast, pipeline, AutoTokenizer,T5Tokenizer, T5ForConditionalGeneration
 import os

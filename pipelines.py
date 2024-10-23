@@ -1,9 +1,9 @@
 # Importar librerias
-from functions import get_video_code, fetch_transcript, transcribe_youtube, show_full_text, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter, translate_to_spanish
-from summary_transformers import MultilingualSummarizer,T5Summarizer, summarize_text, split_text, summarize_text_tokenizer, split_text_tokenizer
+from functions import get_video_code, fetch_transcript, transcribe_youtube, remove_non_alphanumeric,remove_line_breaks,extract_text_from_pdf, save_text ,save_pdf_file,extract_text_from_pdf_plumber,extract_text_from_pdf_with_columns_and_footer_filter, translate_to_spanish
 from summary_llms import summarize_with_gptneo, summarize_with_distilgpt2
-import os
 import streamlit as st
+import os
+
 
 # Carpetas donde se guardan los inputs y outputs.
 input_folder = "raw_data"
@@ -33,6 +33,7 @@ def pdf_pipeline(pdf_file, model_name):
 
     Args:
         pdf_file (str): el fichero pdf cargado por el usuario .
+        model_name (str) : nombre del modelo de resumen seleccionado por el usuario /definido por default.
 
     Returns:
         str: El texto resumido generado.
@@ -42,18 +43,15 @@ def pdf_pipeline(pdf_file, model_name):
     save_pdf_file(pdf_file, input_path)
 
 
-    raw_text = extract_text_from_pdf_with_columns_and_footer_filter(input_path)
+    raw_text = extract_text_from_pdf(input_path)
 
-    #Funciones de limpieza, no requeridas finalmente.
+    #Funciones de limpieza, no implementadas finalmente.
     #text_no_line_breaks = remove_line_breaks(raw_text)
     #clean_text = remove_non_alphanumeric(text_no_line_breaks)
 
     os.makedirs(transcription_folder, exist_ok=True)
     save_text(raw_text, output_path_pdf)
-
-    #summarizer = MODEL 
-    #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
- 
+    
     if model_name == "EleutherAI/gpt-neo-125M":
         summarized_text = summarize_with_gptneo(raw_text)
     else:
@@ -70,6 +68,8 @@ def video_pipeline(video_url, model_name):
 
     Args:
         video_url (str): URL del video de YouTube a procesar.
+        model_name (str) : nombre del modelo de resumen seleccionado por el usuario /definido por default.
+
 
     Returns:
         str: El texto resumido generado.
@@ -84,11 +84,6 @@ def video_pipeline(video_url, model_name):
 
     os.makedirs(transcription_folder, exist_ok=True)
     save_text(raw_text, output_path_video)
-
-    # Lineas de codigo comentadas por corresponder a las pruebas de los modelos de transformer iniciales.
-    #summarizer = MODEL  # Carga el modelo de resumen
-    #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
-
 
     if model_name == "EleutherAI/gpt-neo-125M":
         summarized_text = summarize_with_gptneo(raw_text)
@@ -111,15 +106,12 @@ def scrapping_pipeline(raw_text, model_name, new_site):
 
     Args::
         raw_text (str): el texto de la noticia obtenido a traves de web scrapping.
+        model_name (str) : nombre del modelo de resumen seleccionado por el usuario /definido por default.
+
 
     Returns:
         str: El texto resumido generado.
     """
-
-    #summarizer = MODEL  # Carga el modelo de resumen
-    #summarized_text = summarize_text(raw_text, summarizer, max_length=summary_length, chunk_size=CHUNK_SIZE)
-    st.write("MODELO:",model_name)
-  
     
     if model_name == "EleutherAI/gpt-neo-125M":
         summarized_text = summarize_with_gptneo(translated_text)

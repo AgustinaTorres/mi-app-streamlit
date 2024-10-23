@@ -2,9 +2,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from pipelines import pdf_pipeline, video_pipeline, scrapping_pipeline
-from functions import get_user_web_selection, scrape_web_header, scrape_news, news_sites
-import re
-import os
+from functions import get_user_web_selection, scrape_web_header, scrape_news
 
 
 # Configurar el título principal y la disposición de la página
@@ -17,7 +15,7 @@ def show_loading_message():
 
 # --------------------------------------------- DISEÑO DE PAGINAS---------------------------------------------------------------------
 
-# Estilo de fondo
+# Definir estilo de fondo
 page_bg_img = '''
 <style>
 .stApp {
@@ -55,8 +53,8 @@ body::before {
 # Aplicar el estilo de fondo
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-# Mostrar iniciales en la esquina superior derecha
-st.markdown('<div class="initials">ATM</div>', unsafe_allow_html=True)  # Cambia "AT" por tus iniciales
+# Mostrar iniciales en la esquina superior derecha . simila logo personalizado
+st.markdown('<div class="initials">ATM</div>', unsafe_allow_html=True)  
 
 # Definir estilos comunes
 menu_styles = {
@@ -78,7 +76,7 @@ menu_styles = {
 with st.sidebar:
     selected = option_menu(
         menu_title="",  # Título del menú
-        options=["Introducción", "Resume", "Ajustes"],  # Opciones del menú
+        options=["Introducción", "Resumen", "Ajustes"],  # Opciones del menú
         icons=["house", "file-earmark-text", "book"],  # Íconos correspondientes a las opciones
         menu_icon="cast",  # Ícono del menú
         default_index=0,  # Opción seleccionada por defecto
@@ -107,15 +105,15 @@ with st.sidebar:
     st.markdown("### Soporte")
     st.write("Para preguntas, contacta a atmoray@gmail.com")
 
-# --------------------------------------------- ESTADO PARAMETRIZACION MODELOS ---------------------------------------------------------------------
+# --------------------------------------------- ESTADO GLOBAL - PARAMETRIZACION MODELOS ---------------------------------------------------------------------
 
 # Inicializar 'ajustes' en session_state si no existe
 if "ajustes" not in st.session_state:
     st.session_state["ajustes"] = {
-        "summary_length": "50",  # Valor por defecto para la longitud del resumen
+        "summary_length": "100",  # Valor por defecto para la longitud del resumen
         "model_name": "EleutherAI/gpt-neo-125M",  # Modelo por defecto
         "temperature": 0.7,  # Temperatura por defecto
-        "mode": "sampling"  # Modo por defecto
+        "mode": "beam search"  # Modo por defecto
     }
 
 # --------------------------------------------- PAGINAS PRINCIPALES ---------------------------------------------------------------------
@@ -132,30 +130,30 @@ if selected == "Introducción":
             font-family: Arial, sans-serif;
             color: black;
         }
-         .transparente h1 {
-        font-size: 40px; /* Tamaño ajustado del título */
+         .transparente h2 {
+        font-size: 35px; /* Tamaño ajustado del título */
         }
         </style>
         <div class="transparente">
-        <h1>Bienvenido a nuestra App de Resumen Inteligente</h1>
-        <p>¡Hola! Te damos la bienvenida a nuestra plataforma de resúmenes inteligentes, donde puedes transformar grandes cantidades de información en resúmenes concisos y fáciles de entender. Nuestra aplicación está diseñada para simplificar el procesamiento de contenido extenso, permitiéndote ahorrar tiempo y obtener lo más importante de forma rápida.</p>
+        <h2>Bienvenido a nuestra App de Resumen Inteligente</h1>
+        <p>¡Hola! Te damos la bienvenida a nuestra plataforma de resúmenes inteligentes, donde puedes transformar tus noticias en resumenes concisos y fáciles de entender. Nuestra aplicación está diseñada para simplificar el procesamiento de contenido extenso, permitiéndote ahorrar tiempo y obtener lo más importante de forma rápida.</p>
 
         <h2>¿Cómo Funciona?</h2>
-        <p><strong>Selecciona tu Fuente:</strong> Elige entre cargar un PDF, insertar el enlace de un video de YouTube, o generar un resumen de noticias a partir de una URL.</p>
+        <p><strong>Selecciona tu Fuente:</strong> Elige entre cargar un PDF, insertar el enlace de un video de YouTube o generar un resumen a partir de una noticia alojada en un periódico en línea.</p>
         <p><strong>Procesamiento Inteligente:</strong> Utilizamos modelos de inteligencia artificial avanzados para extraer y resumir el contenido, presentándote solo la información más relevante.</p>
-        <p><strong>Recibe tu Resumen:</strong> Una vez procesado el contenido, te proporcionamos un resumen claro y directo, que puedes leer y descargar.</p>
+        <p><strong>Recibe tu Resumen:</strong> Una vez procesado el contenido, te proporcionamos un resumen claro y directo, que puedes leer inmediatamente.</p>
 
         <h2>¿Qué Puedes Resumir?</h2>
         <p><strong>Documentos PDF:</strong> Sube cualquier documento y obtén un resumen en segundos.</p>
         <p><strong>Videos de YouTube:</strong> Solo con el enlace, nuestro sistema transcribe y resume el contenido del video.</p>
-        <p><strong>Noticias Online:</strong> Inserta la URL de tu artículo y recibe un resumen preciso.</p>
+        <p><strong>Noticias Online:</strong> Elige el periódico, sección y noticia deseada, nosotros hacemos el resto.</p>
 
         <p>Empieza ahora y optimiza tu tiempo con nuestros resúmenes automáticos. ¡Fácil, rápido y eficiente!</p>
         </div>
         ''', unsafe_allow_html=True)
 
-
-elif selected == "Resume":
+# Segunda página: Resumen
+elif selected == "Resumen":
 
     # Título
     st.title('RESUME TUS NOTICIAS CON IA')
@@ -163,19 +161,14 @@ elif selected == "Resume":
 
     # Opcioes
     option = st.selectbox("Que desear resumir?", 
-                        ["Video de Youtube", "Articulo en PDF", "Periódico en linea"])
-
-    # Options --  opion desactivada para llms - utilizada en prueba de modelos de transformer.
-    #option_length = st.selectbox("Que largo largo deseas que tenga el resumen ?", 
-                        #["LARGO: 200 tokens","MEDIO: 100 tokens", "CORTO: 50 tokens"])
-
-    #summary_length = int(option_length.split()[1])
+                        ["Video de Youtube", "Articulo en PDF", "Noticia en linea"])
 
     # ------------------------------------------------- Resumen de PDF -------------------------------------------------
     
     #if option == "Articulo en PDF" and summary_length:
     if option == "Articulo en PDF":
         pdf_file = st.file_uploader("Sube tu articulo en PDF", type=["pdf"], help="Arrastra y suelta el archivo aquí o haz clic para seleccionar uno.")
+        
         if st.button("RESUMIR"): 
             if pdf_file:
                 st.success("El articulo se cargo correctamente")
@@ -201,15 +194,14 @@ elif selected == "Resume":
 
     # ------------------------------------- Resumen de video de Youtube ------------------------------------------------------
     
-    #if option == "Video de Youtube" and summary_length:
     if option == "Video de Youtube":
         video_url = st.text_input("Ingrese la URL del video de YouTube")
+
         if st.button("RESUMIR"):
             if video_url:
                 st.success("La url es correcta")
                 try:
                     with st.spinner("Resumiendo, por favor espera..."):
-                        #summarized_text = video_pipeline(video_url, summary_length)
                         model_name = st.session_state["ajustes"]["model_name"]
                         summarized_text = video_pipeline(video_url, model_name)
                         # Estilo para el fondo blanco
@@ -229,7 +221,7 @@ elif selected == "Resume":
     # --------------------------------------- Resumen de periódico en linea --------------------------------------------------------------
     
     #if option == "Periódico en linea" and summary_length:
-    if option == "Periódico en linea":
+    if option == "Noticia en linea":
         news_options = ["El pais", "NBC", "elDiario.es"]
         selected_news_site = st.selectbox("Seleccione el Periódico", news_options)
         
@@ -239,7 +231,7 @@ elif selected == "Resume":
             if user_web_selection:
                 web_sections = scrape_web_header(user_web_selection["url"], user_web_selection["header"]["tag"], user_web_selection["header"]["class"])
                 
-                section_options = [section["section"] for section in web_sections]  # Nombre de las secciones
+                section_options = [section["section"] for section in web_sections]
                 selected_section = st.selectbox("Seleccione la Sección", section_options)
                 
                 if selected_section:
@@ -280,12 +272,9 @@ elif selected == "Resume":
                                     """.format(selected_news['title'],selected_news["content"]), unsafe_allow_html=True
                                     
                                 )
-                                #st.markdown(f"## {selected_news['title']}")
-                                #st.write(selected_news["content"])
                                 
                             if resumir_noticia and selected_news:
                                 with st.spinner("Resumiendo la noticia, por favor espere..."):
-                                    # summarizer = MultilingualSummarizer()
                                     model_name = st.session_state["ajustes"]["model_name"]
                                     summarized_text = scrapping_pipeline(selected_news['content'], model_name, selected_news_site)
                                      # Estilo para el fondo blanco
@@ -296,10 +285,10 @@ elif selected == "Resume":
                                             <p>{}</p>
                                         </div>
                                         """.format(summarized_text), unsafe_allow_html=True
-                                    )
-                                    
+                                    )                                   
 
-if selected == "Ajustes":
+# Tercera página: Ajustes de parámetros
+elif selected == "Ajustes":
     css_fondo_ajustes = """
     <style>
         /* Fondo claro para los selectboxes, sliders y los inputs en general */
@@ -343,7 +332,6 @@ if selected == "Ajustes":
     st.title("Ajustes tecnicos")
     st.markdown("Parametriza tu modelo de resumen. Caso contrario se aplicaran los valores por default.")
 
-
     # Crear las dos columnas
     col1, col2 = st.columns(2)
 
@@ -351,7 +339,7 @@ if selected == "Ajustes":
     with col1:
         # Longitud del resumen
         summary_length = st.selectbox(
-            "LONGITUD DEL RESUMEN", 
+            "NUMERO MAX.TOKENS", 
             ["50", "100", "200"], 
             index=["50", "100", "200"].index(str(st.session_state["ajustes"]["summary_length"]))  # Obtener el índice del valor actual
         )

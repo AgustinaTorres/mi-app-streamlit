@@ -1,51 +1,48 @@
-#Import libraries
-import fitz 
-import os
-import re
-import pdfplumber
-import streamlit as st
-import requests
+# Importar librerias
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 from IPython.display import Markdown, display
-import requests
+from transformers import MarianMTModel, MarianTokenizer
 from bs4 import BeautifulSoup
+#import pdfplumber
+import fitz 
+import streamlit as st
+import requests
 import html
 import html5lib
-from transformers import MarianMTModel, MarianTokenizer
+import os
+import re
+
 #-------------------------------------- FUNCIONES PDF ------------------------------------------
 
 def save_pdf_file(pdf_file, input_path):
     with open(input_path, "wb") as f:
         f.write(pdf_file.getbuffer())
    
-
 def extract_text_from_pdf(pdf_path):
 
-    # Open the PDF file
+    # Abrir el fichero PDF.
     doc = fitz.open(pdf_path)
 
-    # Initialize an empty string to hold the extracted text
+    # Definir una variable para guardar el texto extraido.
     text = []
 
-    # Iterate over all the pages in the PDF
+    # Iterar sobre todas las paginas del PDF.
     for page_num in range(doc.page_count):
-        # Load the current page
+        # Cargar la pagina actual
         page = doc.load_page(page_num)
 
-        # Extract the text from the page
+        # Extraer el texto.
         page_text = page.get_text("text")
 
-        # Append the text of the current page to the list
+        # Guardar el texto en la variable o concatenarlo al texto existente.
         text.append(page_text)
 
-    # Close the PDF document
+    # Cerrar el fichero PDF.
     doc.close()
 
     raw_text = ''.join(text)
 
-    # Join the list into a single string and return the extracted text
     return raw_text
-
 
 def extract_text_from_pdf_plumber(pdf_path):
     raw_text = ""
@@ -66,26 +63,52 @@ def extract_text_from_pdf_plumber(pdf_path):
             #raw_text += page.extract_text()
     return raw_text
 
+def extract_text_from_pdf_with_columns_and_footer_filter(pdf_path):
+    
+    doc = fitz.open(pdf_path)
+
+    full_text = []
+
+    for page_num in range(doc.page_count):
+        page = doc.load_page(page_num)
+
+        page_width = page.rect.width
+        page_height = page.rect.height
+
+        footer_height = 100  
+
+        left_column = fitz.Rect(0, 0, page_width / 2, page_height - footer_height)  
+        right_column = fitz.Rect(page_width / 2, 0, page_width, page_height - footer_height) 
+
+        left_text = page.get_text("text", clip=left_column)
+        right_text = page.get_text("text", clip=right_column)
+
+        combined_text = left_text + "\n" + right_text
+
+        full_text.append(combined_text)
+
+    doc.close()
+
+    return ''.join(full_text)
+
 #-------------------------------------- FUNCIONES VIDEO ------------------------------------------
 
 def get_video_code(url):
     return url.split("?v=")[-1]
 
-
 def fetch_transcript(video_code, languages=['es', 'en']):
     try:
-        # Attempt to retrieve manually created transcript
+        # Intento de recuperar transcripcion creada manualmente.
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_code)
         transcript = transcript_list.find_manually_created_transcript(languages)
     except (NoTranscriptFound, TranscriptsDisabled):
         try:
-            # If no manual transcript, try to fetch auto-generated transcript
+            # Si no hay transcripcion manual, recuperar transcripcion generada automaticamente.
             transcript = transcript_list.find_generated_transcript(languages)
         except Exception as e:
             raise Exception(f"No transcripts available for this video. Error: {str(e)}")
     
     return transcript
-
 
 def transcribe_youtube(transcript):
     try:
@@ -95,11 +118,9 @@ def transcribe_youtube(transcript):
     except Exception as e:
         raise Exception(f"Error fetching transcript: {str(e)}")
     
+#--------------------------------------  DATA Y FUNCIONES WEB SCRAPPING ----------------------------------------
 
-
-#-------------------------------------- FUNCIONES WEB SCRAPPING ----------------------------------------
-
-
+# Lista de periodicos web junto a sus caracteristicas individuales requeridas
 news_sites = [
     {
         "name": "El pais",
@@ -204,7 +225,6 @@ def scrape_news(user_section_selection, user_web_selection):
         print(f"Error al acceder a {url}")
         return []
 
-
 #------------------------------------- FUNCIONES DE LIMPIEZA DE TEXTO ------------------------------------------------------------
 
 def remove_line_breaks(text):
@@ -214,7 +234,6 @@ def remove_line_breaks(text):
 
 def remove_non_alphanumeric(text):
     # Eliminar caracteres no alfanuméricos si es necesario
-    #text = re.sub(r'[^A-Za-z0-9\s.,;:?!]', '', text)
     text = re.sub(r'[^A-Za-z0-9áéíóúñüÁÉÍÓÚÑÜ.,;:\s]', '', text)
     return text
 
@@ -223,6 +242,17 @@ def preprocess_text(text):
     text = text.strip()  # Elimina espacios en los extremos
     return text
 
+def translate_to_spanish(text):
+    # Cargar el modelo y tokenizer de traducción
+    model_name = "Helsinki-NLP/opus-mt-en-es"
+    tokenizer = MarianTokenizer.from_pretrained(model_name)
+    model = MarianMTModel.from_pretrained(model_name)
+
+    # Tokenizar el texto de entrada y traducir
+    translated = model.generate(**tokenizer(text, return_tensors="pt", padding=True))
+    translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
+
+    return translated_text
 #------------------------------------- FUNCIONES DE GUARDADO (FICHEROS Y TEXTOS) ------------------------------------------------------------
 
 def save_text(text,path):
@@ -236,59 +266,3 @@ def show_full_text(text):
 
 
 
-
-
-
-import fitz  # PyMuPDF
-
-def extract_text_from_pdf_with_columns_and_footer_filter(pdf_path):
-    # Open the PDF file
-    doc = fitz.open(pdf_path)
-
-    # Initialize an empty string to hold the extracted text
-    full_text = []
-
-    # Iterate over all the pages in the PDF
-    for page_num in range(doc.page_count):
-        page = doc.load_page(page_num)
-
-        # Get the dimensions of the page
-        page_width = page.rect.width
-        page_height = page.rect.height
-
-        # Define the footer area height to exclude
-        footer_height = 100  # Adjust this value if needed
-
-        # Define the rectangles for the left and right columns, excluding the footer area
-        left_column = fitz.Rect(0, 0, page_width / 2, page_height - footer_height)  # Left column
-        right_column = fitz.Rect(page_width / 2, 0, page_width, page_height - footer_height)  # Right column
-
-        # Extract text from the left and right columns
-        left_text = page.get_text("text", clip=left_column)
-        right_text = page.get_text("text", clip=right_column)
-
-        # Combine the text from both columns
-        combined_text = left_text + "\n" + right_text
-
-        # Append the text of the current page to the list
-        full_text.append(combined_text)
-
-    # Close the PDF document
-    doc.close()
-
-    # Join the list into a single string and return the extracted text
-    return ''.join(full_text)
-
-
-
-def translate_to_spanish(text):
-    # Cargar el modelo y tokenizer de traducción
-    model_name = "Helsinki-NLP/opus-mt-en-es"
-    tokenizer = MarianTokenizer.from_pretrained(model_name)
-    model = MarianMTModel.from_pretrained(model_name)
-
-    # Tokenizar el texto de entrada y traducir
-    translated = model.generate(**tokenizer(text, return_tensors="pt", padding=True))
-    translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
-
-    return translated_text
