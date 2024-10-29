@@ -35,7 +35,7 @@ def summarize_with_gptneo(text):
         output = model.generate(
             input_ids,
             attention_mask=attention_mask,
-            max_new_tokens=max_new_tokens,
+            max_new_tokens=int(max_new_tokens),
             num_return_sequences=1,
             temperature=temperature,
             top_k=50,
