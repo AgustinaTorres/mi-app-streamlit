@@ -27,15 +27,15 @@ def summarize_with_gptneo(text):
     attention_mask = (input_ids != model.config.pad_token_id).long()
 
     # Parámetros de generación
-    max_new_tokens = st.session_state["ajustes"]["summary_length"]
-    temperature = st.session_state["ajustes"]["temperature"]
+    max_new_tokens = int(st.session_state["ajustes"]["summary_length"])  # Convertir a entero
+    temperature = float(st.session_state["ajustes"]["temperature"])  # Convertir a float si es necesario
     mode = st.session_state["ajustes"]["mode"]
 
     if mode == "sampling":
         output = model.generate(
             input_ids,
             attention_mask=attention_mask,
-            max_new_tokens=int(max_new_tokens),
+            max_new_tokens=max_new_tokens,
             num_return_sequences=1,
             temperature=temperature,
             top_k=50,
