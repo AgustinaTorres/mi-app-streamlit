@@ -2,11 +2,19 @@
 from transformers import GPTNeoForCausalLM, GPT2Tokenizer, AutoTokenizer, AutoModelForCausalLM
 import streamlit as st
 
+@st.cache_resource
+def load_gptneo_model_and_tokenizer(model_name):
+    model = GPTNeoForCausalLM.from_pretrained(model_name)
+    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model.config.pad_token_id = model.config.eos_token_id
+    return model, tokenizer
+
 def summarize_with_gptneo(text):
     # Cargar el modelo y el tokenizer
     model_name = st.session_state["ajustes"]["model_name"]
-    model = GPTNeoForCausalLM.from_pretrained(model_name)
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    #model = GPTNeoForCausalLM.from_pretrained(model_name)
+    #tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model, tokenizer = load_gptneo_model_and_tokenizer(model_name)
 
     # Establecer pad_token_id
     model.config.pad_token_id = model.config.eos_token_id
